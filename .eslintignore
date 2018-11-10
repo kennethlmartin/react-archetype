@@ -1,0 +1,4 @@
+# https://eslint.org/docs/user-guide/configuring#eslintignore
+
+/build
+node_modules/

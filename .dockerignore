@@ -1,0 +1,18 @@
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+.editorconfig
+.eslintcache
+.dockerignore
+.git
+.gitignore
+.sass-cache
+.nodemon-find-ref
+docker-compose.yml
+Dockerfile
+npm-debug.log
+**/*.DS_Store
+**/*.env*
+**/*.md
+**/*.swp
+/build
+/node_modules

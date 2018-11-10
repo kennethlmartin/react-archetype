@@ -1,0 +1,37 @@
+# https://docs.docker.com/compose/compose-file/
+
+version: '3.4'
+
+x-app:
+  &default-app
+  image: react-archetype-base
+  env_file: .env
+  environment:
+    - FORCE_COLOR=1
+    - WEBPACK_ENABLED=${WEBPACK_ENABLED:-true}
+  volumes:
+    - git-empty:/src/.git:cached
+    - npm-cache:/root/.npm:delegated
+    - .:/src
+
+services:
+  app:
+    << : *default-app
+    build:
+      context: .
+      target: base
+    command: npm run start:dev
+    container_name: react-archetype-app
+    ports:
+      - '3000:3000'
+
+  webpack:
+    << : *default-app
+    command: npm run start:webpack
+    container_name: react-archetype-webpack
+    ports:
+      - '3001:3001'
+
+volumes:
+  git-empty:
+  npm-cache:
