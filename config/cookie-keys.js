@@ -7,4 +7,5 @@ module.exports = {
     '1SBjOxHzQ1xmlgyULWoZkUWstTkLeF9s',
   ],
   format: Array,
+  sensitive: true,
 };
