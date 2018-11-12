@@ -21,7 +21,11 @@ const Server = props => (
       }
     </head>
     <body {...props.helmet.bodyAttributes.toComponent()}>
-      <RenderMarkup html={props.markup} id="app-root" />
+      <RenderMarkup
+        html={props.markup}
+        id="app-root"
+        tag="main"
+      />
       <PreloadedState state={props.preloadedState} />
       {
         props.assets.scripts.map(asset => (
