@@ -9,24 +9,17 @@ import { hot } from 'react-hot-loader';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import NotFoundPage from 'app/pages/NotFound';
-import ScrollToTop from 'app/components/utilities/ScrollToTop';
 import routes from 'app/routes';
+import { RouteWithSubRoutes, ScrollToTop } from 'app/components/utilities';
 
 class AppRoot extends Component {
   constructor(props) {
     super(props);
   }
 
-  renderSubRoute(route, index) {
+  renderSubRoute(route, i) {
     return (
-      <Route
-        exact={route.exact}
-        key={index}
-        path={route.path}
-        render={props => (
-          <route.component {...props} routes={route.routes} />
-        )}
-      />
+      <RouteWithSubRoutes key={i} {...route} />
     );
   }
 
