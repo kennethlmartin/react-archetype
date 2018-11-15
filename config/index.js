@@ -11,6 +11,7 @@ module.exports = convict({
   dirs: require('./dirs'),
   env: {
     default: 'development',
+    doc: 'application environment',
     env: 'NODE_ENV',
     format: ['production', 'staging', 'development', 'test'],
   },
