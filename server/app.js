@@ -4,6 +4,7 @@
 
 const Boom = require('boom');
 const compress = require('koa-compress');
+const helmet = require('koa-helmet');
 const Koa = require('koa');
 const koaReactViews = require('koa-react-view');
 const mount = require('koa-mount');
@@ -26,6 +27,9 @@ app.keys = config.get('cookieKeys');
 
 // Cookie-based session middleware
 app.use(session(config.get('cookieSession'), app));
+
+// Security headers
+app.use(helmet());
 
 // Error handler middleware
 app.use(errorHandler);
