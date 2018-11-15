@@ -12,7 +12,7 @@
     "lint:eslint": "eslint . --ext .js --ext .jsx --cache",
     "lint:stylelint": "stylelint ./app/**/*.css --cache",
     "start": "node server",
-    "start:dev": "nodemon server",
+    "start:dev": "nodemon --trace-warnings --trace-deprecation server",
     "start:webpack": "webpack-dashboard -m -- webpack-dev-server",
     "test:lint": "npm run lint:eslint && npm run lint:stylelint"
   },
