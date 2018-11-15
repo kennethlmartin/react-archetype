@@ -44,6 +44,7 @@ const printServerInfo = () => {
 
   console.log(chalk.dim(t.print()));
   console.timeEnd('start time');
+  console.log('');
 };
 
 app.listen(config.get('app.port'), printServerInfo);

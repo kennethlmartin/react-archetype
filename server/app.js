@@ -5,6 +5,7 @@
 const Boom = require('boom');
 const compress = require('koa-compress');
 const helmet = require('koa-helmet');
+const logger = require('koa-logger');
 const Koa = require('koa');
 const koaReactViews = require('koa-react-view');
 const mount = require('koa-mount');
@@ -21,6 +22,9 @@ module.exports = app = new Koa();
 
 // Trust proxy header fields
 app.proxy = true;
+
+// Request logging
+app.use(logger());
 
 // Signed cookie keys
 app.keys = config.get('cookieKeys');
