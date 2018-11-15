@@ -19,10 +19,9 @@ const Link = ({
   location,
   newTab,
   params,
+  pathname,
   preserveQuery,
   query,
-  route,
-  routes,
   ...props
 }) => (
   <NavLink
@@ -30,7 +29,7 @@ const Link = ({
     className={cx(className, { disabled })}
     target={newTab ? '_blank' : null}
     to={{
-      pathname: R.prop(route, routes) + joinPathParams(params),
+      pathname: pathname + joinPathParams(params),
       search: preserveQuery ? location.search : stringifyQuery(query),
     }}
   >
@@ -47,12 +46,12 @@ Link.propTypes = {
   params: PropTypes.array,
   preserveQuery: PropTypes.bool,
   query: PropTypes.object,
-  route: PropTypes.string.isRequired,
-  routes: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, { route }) => ({
+  pathname: R.compose(R.prop(route), getRoutes)(state),
   routes: getRoutes(state),
+
 });
 
 export default R.compose(withRouter, connect(mapStateToProps))(Link);
