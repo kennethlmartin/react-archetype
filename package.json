@@ -31,6 +31,7 @@
     "postcss-preset-env": "6.4.0",
     "redux-devtools-extension": "2.13.5",
     "regenerator-runtime": "0.12.1",
+    "speed-measure-webpack-plugin": "1.2.3",
     "style-loader": "0.23.1",
     "stylelint-config-archetype": "1.1.0",
     "uglifyjs-webpack-plugin": "2.0.1",

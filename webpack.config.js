@@ -3,6 +3,13 @@
  */
 
 const webpackMerge = require('webpack-merge');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+
+/**
+ * Measure webpack build speed
+ * @see https://www.npmjs.com/package/speed-measure-webpack-plugin
+ */
+const smp = new SpeedMeasurePlugin();
 
 /**
  * Base module paths for webpack to resolve
@@ -34,4 +41,4 @@ switch (process.env.npm_lifecycle_event) {
 // uncomment below to trace webpack deprecation notices to specific loader
 // process.traceDeprecation = true;
 
-module.exports = webpackMerge(webpackConfig, webpackModulePaths);
+module.exports = smp.wrap(webpackMerge(webpackConfig, webpackModulePaths));
