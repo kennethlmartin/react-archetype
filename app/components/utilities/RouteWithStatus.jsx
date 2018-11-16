@@ -12,6 +12,7 @@ const RouteWithStatus = ({ children, status }) => (
       if (staticContext) {
         staticContext.status = status;
       }
+
       return children;
     }}
   />

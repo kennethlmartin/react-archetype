@@ -6,16 +6,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 /* eslint-disable react/no-danger */
-const RenderMarkup = ({ html, tag, ...props }) => {
-  const CustomTag = tag;
-
-  return (
-    <CustomTag
-      {...props}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
-};
+const RenderMarkup = ({ html, tag: Tag, ...props }) => (
+  <Tag {...props} dangerouslySetInnerHTML={{ __html: html }} />
+);
 
 RenderMarkup.propTypes = {
   html: PropTypes.string.isRequired,
