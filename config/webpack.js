@@ -15,6 +15,12 @@ module.exports = {
     env: 'WEBPACK_HOSTNAME',
     format: 'url',
   },
+  measure: {
+    default: true,
+    doc: 'whether to display webpack speed measuring',
+    env: 'WEBPACK_MEASURE',
+    format: 'port',
+  },
   port: {
     default: 3001,
     doc: 'webpack server port',

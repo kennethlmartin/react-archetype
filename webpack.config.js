@@ -5,11 +5,15 @@
 const webpackMerge = require('webpack-merge');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 
+const config = require('config');
+
 /**
  * Measure webpack build speed
  * @see https://www.npmjs.com/package/speed-measure-webpack-plugin
  */
-const smp = new SpeedMeasurePlugin();
+const smp = new SpeedMeasurePlugin({
+  disabled: config.get('webpack.measure'),
+});
 
 /**
  * Base module paths for webpack to resolve
