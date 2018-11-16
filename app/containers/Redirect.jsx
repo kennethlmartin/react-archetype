@@ -9,14 +9,14 @@ import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
 
 import { getRoutes } from 'app/state/routes/selectors';
-import { joinPathParams, stringifyQuery } from 'app/state/router/utilities';
+import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
 
 const RedirectContainer = ({ location, params, pathname, preserveQuery, query, ...props }) => (
   <Redirect
     {...R.pick(R.keys(Redirect.propTypes), props)}
     to={{
-      pathname: pathname + joinPathParams(params),
-      search: preserveQuery ? location.search : stringifyQuery(query),
+      pathname: pathname + buildPathParams(params),
+      search: preserveQuery ? location.search : buildQueryString(query),
     }}
   />
 );

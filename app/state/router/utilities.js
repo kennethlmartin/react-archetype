@@ -6,21 +6,47 @@ import Qs from 'qs';
 import * as R from 'ramda';
 import { push } from 'connected-react-router';
 
-export const joinPathParams = params => params ? `/${params.join('/')}` : '';
-export const stringifyQuery = query => query ? `?${Qs.stringify(query)}` : '';
+/**
+ * Build path parameters from an array
+ *
+ * @param {Array} params - array of params
+ * @returns {string} - joined params as a path
+ */
+export const buildPathParams = R.cond([
+  [R.isNil, R.always('')],
+  [R.isEmpty, R.always('')],
+  [R.T, R.compose(R.concat('/'), R.join('/'))],
+]);
 
-export const transitionTo = ({ pathname, pathParams, query }) => push({
-  pathname: pathname + joinPathParams(pathParams),
-  search: stringifyQuery(query),
+/**
+ * Build query string from an object
+ *
+ * @param {Object} query - object query
+ * @returns {string} - stringified query
+ */
+export const buildQueryString = R.cond([
+  [R.isNil, R.always('')],
+  [R.isEmpty, R.always('')],
+  [R.T, R.compose(R.concat('?'), Qs.stringify)],
+]);
+
+/**
+ * Parse a query string
+ *
+ * @param {string} query - query string to parse
+ * @returns {Object} - parsed query string
+ */
+export const parseQueryString = R.compose(Qs.parse, R.replace('?', ''));
+
+/**
+ * Navigate to new url
+ *
+ * @param {string} pathname - pathname to navigate to
+ * @param {Array} params - used to `buildPathParams`
+ * @param {Object} query - used to `buildQueryString`
+ * @returns {*}
+ */
+export const navigateTo = ({ pathname, params, query }) => push({
+  pathname: pathname + buildPathParams(params),
+  search: buildQueryString(query),
 });
-
-export const parseQueryString = R.compose(
-  Qs.parse,
-  R.replace('?', ''),
-);
-
-export const buildQueryString = R.compose(
-  R.join(''),
-  R.concat('?'),
-  Qs.stringify,
-);

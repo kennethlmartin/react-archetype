@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 
 import { getRoutes } from 'app/state/routes/selectors';
-import { joinPathParams, stringifyQuery } from 'app/state/router/utilities';
+import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
 
 const Link = ({
   children,
@@ -29,8 +29,8 @@ const Link = ({
     className={cx(className, { disabled })}
     target={newTab ? '_blank' : null}
     to={{
-      pathname: pathname + joinPathParams(params),
-      search: preserveQuery ? location.search : stringifyQuery(query),
+      pathname: pathname + buildPathParams(params),
+      search: preserveQuery ? location.search : buildQueryString(query),
     }}
   >
     {children}
@@ -50,8 +50,6 @@ Link.propTypes = {
 
 const mapStateToProps = (state, { route }) => ({
   pathname: R.compose(R.prop(route), getRoutes)(state),
-  routes: getRoutes(state),
-
 });
 
 export default R.compose(withRouter, connect(mapStateToProps))(Link);
