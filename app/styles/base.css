@@ -1,8 +1,9 @@
 /*
 =========================================
-app/styles/main
+app/styles/base
 =========================================
 */
 
-@import "variables.css";
-@import "base.css";
+#app-root {
+  padding: 40px;
+}
