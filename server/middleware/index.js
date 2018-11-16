@@ -3,5 +3,5 @@
  */
 
 exports.errorHandler = require('./error-handler');
-exports.loadAssetManifest = require('./load-asset-manifest');
+exports.assetManifest = require('./asset-manifest');
 exports.preloadState = require('./preload-state');

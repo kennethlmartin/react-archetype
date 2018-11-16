@@ -14,17 +14,17 @@ const { StaticRouter } = require('react-router');
 
 const AppRoot = require('app/containers/AppRoot').default;
 const config = require('config');
-const middleware = require('server/middleware');
 const webpackConstants = require('webpack/webpack.constants');
 const { buildAssetPaths } = require('server/utilities');
 const { configureStore } = require('app/state/store');
+const { preloadState, assetManifest } = require('server/middleware');
 
 let router;
 module.exports = router = new Router();
 
 router.use(
-  middleware.preloadState,
-  middleware.loadAssetManifest,
+  preloadState,
+  assetManifest,
 );
 
 router.get('*', async (ctx) => {
