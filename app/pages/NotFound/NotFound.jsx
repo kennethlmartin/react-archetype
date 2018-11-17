@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet-async';
 import { Switch } from 'react-router-dom';
 
 import './NotFound.css';
@@ -13,6 +14,9 @@ const NotFoundPage = () => (
   <Switch>
     <RouteWithStatus status={404}>
       <section id="not-found-page">
+        <Helmet>
+          <title>{'Not Found Page'}</title>
+        </Helmet>
         <h1>
           {'NotFoundPage'}
         </h1>

@@ -6,6 +6,7 @@ import 'regenerator-runtime/runtime';
 import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
+import { HelmetProvider } from 'react-helmet-async';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -27,8 +28,10 @@ const store = configureStore(history, preloadedState);
 // Render App
 hydrate((
   <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <AppRoot />
-    </ConnectedRouter>
+    <HelmetProvider>
+      <ConnectedRouter history={history}>
+        <AppRoot />
+      </ConnectedRouter>
+    </HelmetProvider>
   </Provider>
 ), document.getElementById('app-root'));

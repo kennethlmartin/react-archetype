@@ -3,7 +3,7 @@
  */
 
 import * as R from 'ramda';
-import Helmet from 'react-helmet';
+import Helmet from 'react-helmet-async';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -26,11 +26,10 @@ class AppRoot extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-          <title>{'Archetype Title'}</title>
-        </Helmet>
+        <Helmet
+          defaultTitle="React Archetype"
+          titleTemplate="%s | React Archetype"
+        />
         <ScrollToTop>
           <Switch key="root-content-switch">
             {

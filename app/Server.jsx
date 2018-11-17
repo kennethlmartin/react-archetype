@@ -11,6 +11,8 @@ import { RenderMarkup, RenderScript, RenderStylesheet } from 'app/components/ren
 const Server = props => (
   <html {...props.helmet.htmlAttributes.toComponent()}>
     <head>
+      <meta charSet="utf-8" />
+      <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       {props.helmet.title.toComponent()}
       {props.helmet.meta.toComponent()}
       {props.helmet.link.toComponent()}

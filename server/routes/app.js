@@ -6,7 +6,7 @@ const React = require('react');
 const Router = require('koa-router');
 const R = require('ramda');
 const { createMemoryHistory } = require('history');
-const { Helmet } = require('react-helmet');
+const { HelmetProvider } = require('react-helmet-async');
 const { LoadableState, LoadableStateManager } = require('@loadable/server');
 const { Provider } = require('react-redux');
 const { renderToString } = require('react-dom/server');
@@ -29,6 +29,7 @@ router.use(
 
 router.get('*', async (ctx) => {
   const context = {};
+  const helmetContext = {};
   const loadableState = new LoadableState();
   const history = createMemoryHistory();
   const store = configureStore(history, ctx.preloadedState);
@@ -36,13 +37,15 @@ router.get('*', async (ctx) => {
   const markup = renderToString(
     <LoadableStateManager state={loadableState}>
       <Provider store={store}>
-        <StaticRouter
-          basename={config.get('app.basePath')}
-          context={context}
-          location={ctx.request.url}
-        >
-          <AppRoot />
-        </StaticRouter>
+        <HelmetProvider context={helmetContext}>
+          <StaticRouter
+            basename={config.get('app.basePath')}
+            context={context}
+            location={ctx.request.url}
+          >
+            <AppRoot />
+          </StaticRouter>
+        </HelmetProvider>
       </Provider>
     </LoadableStateManager>,
   );
@@ -64,7 +67,7 @@ router.get('*', async (ctx) => {
         scripts: buildAssetPaths('js', assetBundles),
         styles: buildAssetPaths('css', assetBundles),
       },
-      helmet: Helmet.renderStatic(),
+      helmet: helmetContext.helmet,
       markup,
       preloadedState: store.getState(),
     });
