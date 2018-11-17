@@ -5,9 +5,9 @@
 const Boom = require('boom');
 const compress = require('koa-compress');
 const helmet = require('koa-helmet');
-const logger = require('koa-logger');
 const Koa = require('koa');
 const koaReactViews = require('koa-react-view');
+const logger = require('koa-logger');
 const mount = require('koa-mount');
 const serve = require('koa-static');
 const session = require('koa-session');
@@ -26,35 +26,35 @@ app.proxy = true;
 // Request logging
 app.use(logger());
 
+// Security headers
+app.use(helmet());
+
 // Signed cookie keys
 app.keys = config.get('cookieKeys');
 
 // Cookie-based session middleware
 app.use(session(config.get('cookieSession'), app));
 
-// Security headers
-app.use(helmet());
+// Compress responses
+app.use(compress({
+  flush: require('zlib').Z_SYNC_FLUSH,
+}));
 
 // Error handler middleware
 app.use(errorHandler);
+
+// Mount and server static files
+app.use(
+  mount(config.get('app.assetsPath'),
+    serve(config.get('dirs.build'), { maxage: config.get('cookieSession.maxAge') }),
+  ),
+);
 
 // Use react for view templates
 koaReactViews(app, {
   cache: !isDevelopment(config.get('env')),
   views: config.get('dirs.app'),
 });
-
-// Compress responses
-app.use(compress({
-  flush: require('zlib').Z_SYNC_FLUSH,
-}));
-
-// Static file serving middleware
-app.use(
-  mount(config.get('app.assetsPath'),
-    serve(config.get('dirs.build'), { maxage: config.get('cookieSession.maxAge') }),
-  ),
-);
 
 // Mount routes
 app.use(
