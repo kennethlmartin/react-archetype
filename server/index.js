@@ -18,11 +18,11 @@ const config = require('config');
 const pkg = require('package.json');
 
 const printServerInfo = () => {
-  const { basePath, hostname, port } = config.get('app');
+  const { basePath, hostname } = config.get('app');
 
   console.log(' ');
   console.log(chalk.bold.green('✔ '), chalk.bold(pkg.name));
-  console.log(chalk.dim('* '), chalk.underline(`${hostname}:${port}${basePath}`));
+  console.log(chalk.dim('* '), chalk.underline(hostname + basePath));
   console.log('');
 
   const t = new Table;
