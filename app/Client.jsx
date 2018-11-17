@@ -19,7 +19,7 @@ delete window.__PRELOADED_STATE__;
 
 // Routing is relative to our app's basename
 const { app } = preloadedState;
-const history = createBrowserHistory({ basename: app.basename });
+const history = createBrowserHistory({ basename: app.basePath });
 
 // Configure Redux store
 const store = configureStore(history, preloadedState);
