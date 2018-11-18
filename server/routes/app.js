@@ -22,9 +22,10 @@ const { preloadState, assetManifest } = require('server/middleware');
 let router;
 module.exports = router = new Router();
 
+// Middleware
 router.use(
-  preloadState,
-  assetManifest,
+  assetManifest(),
+  preloadState(),
 );
 
 router.get('*', async (ctx) => {

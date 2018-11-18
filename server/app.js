@@ -45,7 +45,7 @@ app.use(compress({
 }));
 
 // Error handler middleware
-app.use(errorHandler);
+app.use(errorHandler());
 
 // Mount and server static files
 app.use(

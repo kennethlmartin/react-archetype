@@ -24,7 +24,9 @@ const loadAssetManifest = async () => {
   }
 };
 
-module.exports = async (ctx, next) => {
-  ctx.assetManifest = await loadAssetManifest();
-  return next();
+module.exports = function assetManifest() {
+  return async (ctx, next) => {
+    ctx.assetManifest = await loadAssetManifest();
+    return next();
+  };
 };
