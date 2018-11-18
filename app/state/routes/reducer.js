@@ -5,8 +5,8 @@
 import routes from 'app/routes';
 import { mapRoutes } from './utilities';
 
-const initialState = mapRoutes(routes);
+const INITIAL_STATE = mapRoutes(routes);
 
-export default function reducer (state = initialState) {
+export default function reducer (state = INITIAL_STATE) {
   return state;
 }
