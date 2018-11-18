@@ -2,8 +2,8 @@
 
 .DS_Store
 .env
-.*cache
 .nodemon-find-ref
+.*cache
 *.log
 *.swp
 /build

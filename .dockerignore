@@ -7,12 +7,13 @@
 .gitignore
 .sass-cache
 .nodemon-find-ref
-docker-compose.yml
-Dockerfile
-npm-debug.log
+.*cache
 **/*.DS_Store
 **/*.env*
 **/*.md
 **/*.swp
+docker-compose.yml
+Dockerfile
+npm-debug.log
 /build
 /node_modules
