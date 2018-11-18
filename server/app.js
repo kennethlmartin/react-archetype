@@ -11,6 +11,7 @@ const logger = require('koa-logger');
 const mount = require('koa-mount');
 const serve = require('koa-static');
 const session = require('koa-session');
+const slashes = require('koa-remove-trailing-slashes');
 
 const config = require('config');
 const errorHandler = require('server/middleware/error-handler');
@@ -22,6 +23,9 @@ module.exports = app = new Koa();
 
 // Trust proxy header fields
 app.proxy = true;
+
+// Remove any trailing slashes
+app.use(slashes());
 
 // Request logging
 app.use(logger());
