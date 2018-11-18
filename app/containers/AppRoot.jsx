@@ -35,7 +35,7 @@ class AppRoot extends Component {
             {
               routes.map(this.renderSubRoute)
             }
-            <Route component={NotFoundPage} />
+            <Route render={props => <NotFoundPage {...props} />} />
           </Switch>
         </ScrollToTop>
       </div>
