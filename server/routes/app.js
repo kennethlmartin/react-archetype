@@ -28,10 +28,10 @@ router.use(
 );
 
 router.get('*', async (ctx) => {
-  const context = {};
   const helmetContext = {};
-  const loadableState = new LoadableState();
   const history = createMemoryHistory();
+  const loadableState = new LoadableState();
+  const routerContext = {};
   const store = configureStore(history, ctx.preloadedState);
 
   const markup = renderToString(
@@ -40,7 +40,7 @@ router.get('*', async (ctx) => {
         <HelmetProvider context={helmetContext}>
           <StaticRouter
             basename={config.get('app.basePath')}
-            context={context}
+            context={routerContext}
             location={ctx.request.url}
           >
             <AppRoot />
@@ -55,12 +55,12 @@ router.get('*', async (ctx) => {
     ...R.values(webpackConstants.BUNDLES), // initial bundles
   ])(ctx.assetManifest);
 
-  if (context.status) {
-    ctx.status = context.status;
+  if (routerContext.status) {
+    ctx.status = routerContext.status;
   }
 
-  if (context.url) {
-    ctx.redirect(context.url);
+  if (routerContext.url) {
+    ctx.redirect(routerContext.url);
   } else {
     ctx.render('Server', {
       assets: {
