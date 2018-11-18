@@ -9,6 +9,7 @@ import { push } from 'connected-react-router';
 /**
  * Build path parameters from an array
  *
+ * @function
  * @param {Array} params - array of params
  * @returns {string} - joined params as a path
  */
@@ -21,6 +22,7 @@ export const buildPathParams = R.cond([
 /**
  * Build query string from an object
  *
+ * @function
  * @param {Object} query - object query
  * @returns {string} - stringified query
  */
@@ -33,6 +35,7 @@ export const buildQueryString = R.cond([
 /**
  * Parse a query string
  *
+ * @function
  * @param {string} query - query string to parse
  * @returns {Object} - parsed query string
  */
@@ -41,6 +44,7 @@ export const parseQueryString = R.compose(Qs.parse, R.replace('?', ''));
 /**
  * Navigate to new url
  *
+ * @function
  * @param {string} pathname - pathname to navigate to
  * @param {Array} params - used to `buildPathParams`
  * @param {Object} query - used to `buildQueryString`

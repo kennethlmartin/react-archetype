@@ -6,5 +6,21 @@ import * as R from 'ramda';
 import { createSelector } from 'reselect';
 
 const getRoot = R.prop('app');
+
+/**
+ * Get the app state slice
+ *
+ * @function
+ * @param {Object} state
+ * @returns {Object}
+ */
 export const getApp = getRoot;
-export const getBasename = createSelector(getApp, R.prop('basename'));
+
+/**
+ * Get the app basePath
+ *
+ * @function
+ * @param {Object} state
+ * @returns {string}
+ */
+export const getBasePath = createSelector(getApp, R.prop('basePath'));
