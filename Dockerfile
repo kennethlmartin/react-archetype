@@ -19,7 +19,7 @@ COPY package.json package-lock.json .npmrc ./
 RUN npm install
 COPY . .
 
-RUN npm run bundle
+RUN npm run build
 RUN npm prune --production
 
 ###

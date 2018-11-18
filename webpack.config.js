@@ -35,8 +35,8 @@ switch (process.env.npm_lifecycle_event) {
   case 'start:webpack':
     webpackConfig = require('webpack/webpack.config.dev');
     break;
-  case 'bundle':
-    webpackConfig = require('webpack/webpack.config.bundle');
+  case 'build':
+    webpackConfig = require('webpack/webpack.config.prod');
     break;
   default:
     webpackConfig = {};

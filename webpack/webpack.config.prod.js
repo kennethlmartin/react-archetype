@@ -1,7 +1,7 @@
 /**
  * Configuration for production bundle.
  *
- * @module webpack/webpack.config.dev
+ * @module webpack/webpack.config.prod
  * @see https://webpack.js.org/configuration/
  */
 

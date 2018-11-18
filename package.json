@@ -8,7 +8,7 @@
     "node": ">=11"
   },
   "scripts": {
-    "bundle": "webpack --progress",
+    "build": "webpack --progress",
     "lint:eslint": "eslint . --ext .js --ext .jsx --cache",
     "lint:stylelint": "stylelint ./app/**/*.css --cache",
     "start": "node server",
