@@ -6,13 +6,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const RouteWithSubRoutes = route => (
+const RouteWithSubRoutes = ({ component: Component, routes, ...props }) => (
   <Route
-    exact={route.exact}
-    path={route.path}
-    render={props => (
-      <route.component {...props} routes={route.routes} />
+    render={renderProps => (
+      <Component {...renderProps} routes={routes} />
     )}
+    {...props}
   />
 );
 
