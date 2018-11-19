@@ -2,8 +2,8 @@
  * @module webpack.config
  */
 
-const webpackMerge = require('webpack-merge');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const webpackMerge = require('webpack-merge');
 
 const config = require('config');
 
