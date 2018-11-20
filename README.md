@@ -2,6 +2,7 @@
 **React Archetype** - Boilerplate for React projects.
 ***
 
+[![David](https://img.shields.io/david/kennethlmartin/react-archetype.svg?style=for-the-badge)](https://david-dm.org/kennethlmartin/react-archetype)
 
 ### Table of Contents
 - **[Development](#development)**
