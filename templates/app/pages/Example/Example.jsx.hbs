@@ -1,0 +1,21 @@
+/**
+ * @module app/pages/{{ pascalCase name }}
+ */
+
+import React from 'react';
+import Helmet from 'react-helmet-async';
+
+import './{{ pascalCase name }}.css';
+
+const {{ pascalCase name }}Page = () => (
+  <section id="{{ dashCase name }}-page">
+    <Helmet>
+      <title>{'{{ pascalCase name }} Page'}</title>
+    </Helmet>
+    <h1>
+      {'{{ pascalCase name }}Page'}
+    </h1>
+  </section>
+);
+
+export default {{ pascalCase name }}Page;
