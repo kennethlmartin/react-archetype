@@ -2,7 +2,6 @@
  * @module app/Client
  */
 
-import 'regenerator-runtime/runtime';
 import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
