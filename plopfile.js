@@ -41,4 +41,25 @@ module.exports = function (plop) {
       type: 'input',
     }],
   });
+  plop.setGenerator('component', {
+    actions: [{
+      path: 'app/components/{{ pascalCase name }}/index.js',
+      templateFile: 'templates/app/components/Example/index.js.hbs',
+      type: 'add',
+    }, {
+      path: 'app/components/{{ pascalCase name }}/{{ pascalCase name }}.css',
+      templateFile: 'templates/app/components/Example/Example.css.hbs',
+      type: 'add',
+    }, {
+      path: 'app/components/{{ pascalCase name }}/{{ pascalCase name }}.jsx',
+      templateFile: 'templates/app/components/Example/Example.jsx.hbs',
+      type: 'add',
+    }],
+    description: 'Generates a new component.',
+    prompts: [{
+      message: 'component name:',
+      name: 'name',
+      type: 'input',
+    }],
+  });
 };
