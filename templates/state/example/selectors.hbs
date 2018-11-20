@@ -1,0 +1,26 @@
+/**
+ * @module app/state/{{ lowerCase name }}/selectors
+ */
+
+import * as R from 'ramda';
+import { createSelector } from 'reselect';
+
+const getRoot = R.prop('{{ lowerCase name }}');
+
+/**
+ * Get the {{ lowerCase name }} state slice
+ *
+ * @function
+ * @param {Object} state - redux state
+ * @returns {Object} - {{ lowerCase name }}
+ */
+export const get{{ pascalCase name }} = getRoot;
+
+/**
+ * Get the {{ lowerCase name }} key
+ *
+ * @function
+ * @param {Object} state - redux state
+ * @returns {string} - {{ lowerCase name }}
+ */
+export const get{{ pascalCase name }}Key = createSelector(getRoot, R.prop('{{ lowerCase name }}Key'));

@@ -1,0 +1,22 @@
+/**
+ * @module app/state/{{ lowerCase name }}/sagas
+ */
+
+/* eslint-disable no-console */
+
+import { all, takeLatest } from 'redux-saga/effects';
+import { actionTypes } from './constants';
+
+function* {{ lowerCase name }}() {
+  try {
+    yield console.log('{{ lowerCase name }} saga');
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default function* {{ lowerCase name }}Saga() {
+  yield all([
+    takeLatest(actionTypes.{{ upperCase name }}, {{ lowerCase name }}),
+  ]);
+}

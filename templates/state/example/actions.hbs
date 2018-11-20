@@ -1,0 +1,10 @@
+/**
+ * @module app/state/{{ lowerCase name }}/actions
+ */
+
+import { actionTypes } from './constants';
+import { createAction } from 'app/state/actions';
+
+export const {{ lowerCase name }}Action = () => (
+  createAction(actionTypes.{{ upperCase name }})
+);
