@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'archetype/configurations/node',
     'archetype/rules/plugin-react',
+    'archetype/rules/plugin-jsdoc',
   ],
   parser: 'babel-eslint',
   root: true,

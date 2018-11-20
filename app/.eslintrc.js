@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'archetype/configurations/browser',
     'archetype/rules/plugin-react',
+    'archetype/rules/plugin-jsdoc',
   ],
   root: true,
   settings: {

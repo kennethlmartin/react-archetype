@@ -52,8 +52,8 @@ router.get('*', async (ctx) => {
   );
 
   const assetBundles = R.pick([
-    ...loadableState.getChunks(), // async bundles
-    ...R.values(webpackConstants.BUNDLES), // initial bundles
+    ...loadableState.getChunks(), // Async bundles
+    ...R.values(webpackConstants.BUNDLES), // Initial bundles
   ])(ctx.assetManifest);
 
   if (routerContext.status) {

@@ -42,7 +42,7 @@ switch (process.env.npm_lifecycle_event) {
     webpackConfig = {};
 }
 
-// uncomment below to trace webpack deprecation notices to specific loader
+// Uncomment below to trace webpack deprecation notices to specific loader
 // process.traceDeprecation = true;
 
 module.exports = smp.wrap(webpackMerge(webpackConfig, webpackModulePaths));

@@ -45,10 +45,11 @@ export const parseQueryString = R.compose(Qs.parse, R.replace('?', ''));
  * Navigate to new url
  *
  * @function
- * @param {string} pathname - pathname to navigate to
- * @param {Array} params - used to `buildPathParams`
- * @param {Object} query - used to `buildQueryString`
- * @returns {*}
+ * @param {Object} obj - navigation object
+ * @param {string} obj.pathname - pathname to navigate to
+ * @param {string} obj.params - used to `buildPathParams`
+ * @param {string} obj.query - used to `buildQueryString`
+ * @returns {*} - react-router push event
  */
 export const navigateTo = ({ pathname, params, query }) => push({
   pathname: pathname + buildPathParams(params),

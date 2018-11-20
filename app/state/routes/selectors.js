@@ -7,11 +7,11 @@ import * as R from 'ramda';
 const getRoot = R.prop('routes');
 
 /**
- * Get the routes state slice
+ * Get all routes
  *
  * @function
- * @param {Object} state
- * @returns {Object}
+ * @param {Object} state - redux state
+ * @returns {Object} - routes
  */
 export const getRoutes = getRoot;
 
@@ -19,9 +19,9 @@ export const getRoutes = getRoot;
  * Get a specific route
  *
  * @function
- * @param {Object} state
- * @param {string} route
- * @returns {string}
+ * @param {Object} state - redux state
+ * @param {string} route - route name
+ * @returns {string} - specfic route
  */
 export const getRoute = (state, route) => (
   R.compose(R.prop(route), getRoutes)(state)

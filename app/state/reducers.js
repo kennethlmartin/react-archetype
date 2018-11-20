@@ -13,7 +13,7 @@ import { reducer as routes } from './routes';
  * Create the root reducer for redux
  *
  * @function
- * @param {Object} history
+ * @param {Object} history - react-router history object
  * @returns {Object} - root reducer
  */
 export const createRootReducer = history => combineReducers({
