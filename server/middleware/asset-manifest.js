@@ -1,5 +1,5 @@
 /**
- * @module server/middleware/load-asset-manifest
+ * @module server/middleware/asset-manifest
  */
 
 const path = require('path');

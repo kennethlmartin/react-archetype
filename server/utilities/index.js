@@ -18,24 +18,3 @@ exports.isTest = R.equals('test');
 exports.is404Error = R.equals(404);
 exports.is4xxError = R.allPass([R.flip(R.gte)(400), R.flip(R.lt)(500)]);
 exports.is5xxError = R.allPass([R.flip(R.gte)(500), R.flip(R.lt)(600)]);
-
-/**
- * Build asset paths for an asset type
- *
- * @param {string} type - type (ext) of assets to build for
- * @param {Object} manifest - asset manifest object
- * @returns {array} - full paths or urls to assets
- */
-exports.buildAssetPaths = R.curry((type, manifest) => {
-  const bundles = R.keys(manifest);
-
-  return R.reduce((acc, bundle) => {
-    const path = R.path([bundle, type], manifest);
-
-    if (!path) {
-      return acc;
-    }
-
-    return [...acc, path];
-  }, [], bundles);
-});

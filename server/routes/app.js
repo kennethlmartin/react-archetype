@@ -4,18 +4,15 @@
 
 const React = require('react');
 const Router = require('koa-router');
-const R = require('ramda');
+const { ChunkExtractor, ChunkExtractorManager } = require('@loadable/server');
 const { createMemoryHistory } = require('history');
 const { HelmetProvider } = require('react-helmet-async');
-const { LoadableState, LoadableStateManager } = require('@loadable/server');
 const { Provider } = require('react-redux');
 const { renderToString } = require('react-dom/server');
 const { StaticRouter } = require('react-router');
 
 const AppRoot = require('app/containers/AppRoot').default;
 const config = require('config');
-const webpackConstants = require('webpack/webpack.constants');
-const { buildAssetPaths } = require('server/utilities');
 const { configureStore } = require('app/state/store');
 const { preloadState, assetManifest } = require('server/middleware');
 
@@ -29,14 +26,14 @@ router.use(
 );
 
 router.get('*', async (ctx) => {
+  const extractor = new ChunkExtractor({ stats: ctx.assetManifest });
   const helmetContext = {};
   const history = createMemoryHistory();
-  const loadableState = new LoadableState();
   const routerContext = {};
   const store = configureStore(history, ctx.preloadedState);
 
   const markup = renderToString(
-    <LoadableStateManager state={loadableState}>
+    <ChunkExtractorManager extractor={extractor}>
       <Provider store={store}>
         <HelmetProvider context={helmetContext}>
           <StaticRouter
@@ -48,13 +45,8 @@ router.get('*', async (ctx) => {
           </StaticRouter>
         </HelmetProvider>
       </Provider>
-    </LoadableStateManager>,
+    </ChunkExtractorManager>,
   );
-
-  const assetBundles = R.pick([
-    ...loadableState.getChunks(), // Async bundles
-    ...R.values(webpackConstants.BUNDLES), // Initial bundles
-  ])(ctx.assetManifest);
 
   if (routerContext.status) {
     ctx.status = routerContext.status;
@@ -65,8 +57,8 @@ router.get('*', async (ctx) => {
   } else {
     ctx.render('Server', {
       assets: {
-        scripts: buildAssetPaths('js', assetBundles),
-        styles: buildAssetPaths('css', assetBundles),
+        scripts: extractor.getScriptElements(),
+        styles: extractor.getStyleElements(),
       },
       helmet: helmetContext.helmet,
       markup,

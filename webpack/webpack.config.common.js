@@ -6,7 +6,7 @@
  */
 
 const path = require('path');
-const AssetsPlugin = require('assets-webpack-plugin');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 const config = require('config');
 const constants = require('./webpack.constants');
@@ -59,13 +59,8 @@ module.exports = {
     path: config.get('dirs.build'),
   },
   plugins: [
-    new AssetsPlugin({
+    new LoadablePlugin({
       filename: path.basename(config.get('files.assetManifest')),
-      fileTypes: ['css', 'js'],
-      includeAllFileTypes: false,
-      keepInMemory: true,
-      prettyPrint: true,
-      useCompilerPath: true,
     }),
   ],
 };

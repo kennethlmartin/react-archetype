@@ -8,6 +8,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { HelmetProvider } from 'react-helmet-async';
 import { hydrate } from 'react-dom';
+import { loadableReady } from '@loadable/component';
 import { Provider } from 'react-redux';
 
 import 'app/styles/main.css';
@@ -26,12 +27,16 @@ const history = createBrowserHistory({ basename: app.basePath });
 const store = configureStore(history, preloadedState);
 
 // Render App
-hydrate((
-  <Provider store={store}>
-    <HelmetProvider>
-      <ConnectedRouter history={history}>
-        <AppRoot />
-      </ConnectedRouter>
-    </HelmetProvider>
-  </Provider>
-), document.getElementById('app-root'));
+loadableReady(() => {
+  const root = document.getElementById('app-root');
+
+  hydrate((
+    <Provider store={store}>
+      <HelmetProvider>
+        <ConnectedRouter history={history}>
+          <AppRoot />
+        </ConnectedRouter>
+      </HelmetProvider>
+    </Provider>
+  ), root);
+});

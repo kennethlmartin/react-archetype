@@ -18,8 +18,8 @@
     "test:lint": "npm run lint:eslint && npm run lint:stylelint"
   },
   "devDependencies": {
-    "@loadable/component": "4.0.2",
-    "assets-webpack-plugin": "3.9.7",
+    "@loadable/component": "5.1.2",
+    "@loadable/webpack-plugin": "5.0.2",
     "babel-loader": "8.0.4",
     "clean-webpack-plugin": "1.0.0",
     "css-loader": "1.0.1",
@@ -53,8 +53,8 @@
     "@babel/preset-env": "7.1.6",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.0.0",
-    "@loadable/babel-plugin": "4.0.5",
-    "@loadable/server": "4.0.5",
+    "@loadable/babel-plugin": "5.0.1",
+    "@loadable/server": "5.1.3",
     "axios": "0.18.0",
     "boom": "7.2.2",
     "chalk": "2.4.1",

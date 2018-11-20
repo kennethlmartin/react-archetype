@@ -13,7 +13,8 @@ const common = require('./webpack.config.common');
 const config = require('config');
 const constants = require('./webpack.constants');
 
-const PUBLIC_PATH = `${config.get('webpack.hostname')}:${config.get('webpack.port')}${config.get('app.assetsPath')}`;
+const { hostname, port } = config.get('webpack');
+const { assetsPath } = config.get('app');
 
 module.exports = webpackMerge.smart(common, {
   devServer: {
@@ -22,8 +23,9 @@ module.exports = webpackMerge.smart(common, {
     headers: { 'Access-Control-Allow-Origin': '*' },
     host: '0.0.0.0',
     hot: true,
-    port: config.get('webpack.port'),
-    publicPath: PUBLIC_PATH,
+    port,
+    public: `${hostname}:${port}`,
+    publicPath: assetsPath,
   },
   devtool: 'inline-source-map',
   mode: 'development',
@@ -46,7 +48,7 @@ module.exports = webpackMerge.smart(common, {
   output: {
     chunkFilename: '[name].js',
     filename: '[name].js',
-    publicPath: PUBLIC_PATH,
+    publicPath: `${hostname}:${port}${assetsPath}`,
   },
   plugins: [
     new DashboardPlugin(),

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { PreloadedState } from 'app/components/scripts';
-import { RenderMarkup, RenderScript, RenderStylesheet } from 'app/components/render';
+import { RenderMarkup } from 'app/components/render';
 
 const Server = props => (
   <html {...props.helmet.htmlAttributes.toComponent()}>
@@ -16,11 +16,7 @@ const Server = props => (
       {props.helmet.title.toComponent()}
       {props.helmet.meta.toComponent()}
       {props.helmet.link.toComponent()}
-      {
-        props.assets.styles.map(asset => (
-          <RenderStylesheet href={asset} key={asset} />
-        ))
-      }
+      {props.assets.styles}
     </head>
     <body {...props.helmet.bodyAttributes.toComponent()}>
       <RenderMarkup
@@ -29,11 +25,7 @@ const Server = props => (
         tag="main"
       />
       <PreloadedState state={props.preloadedState} />
-      {
-        props.assets.scripts.map(asset => (
-          <RenderScript async key={asset} src={asset} />
-        ))
-      }
+      {props.assets.scripts}
     </body>
   </html>
 );
