@@ -15,6 +15,7 @@ const RenderScript = ({ async, children, ...props }) => {
 };
 
 RenderScript.propTypes = {
+  async: PropTypes.bool,
   children: PropTypes.string,
 };
 
