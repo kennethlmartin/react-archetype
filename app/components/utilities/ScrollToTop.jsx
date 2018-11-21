@@ -7,10 +7,6 @@ import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 class ScrollToTop extends Component {
-  static propTypes = {
-    location: PropTypes.object,
-  };
-
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0);
@@ -21,5 +17,9 @@ class ScrollToTop extends Component {
     return null;
   }
 }
+
+ScrollToTop.propTypes = {
+  location: PropTypes.object,
+};
 
 export default withRouter(ScrollToTop);

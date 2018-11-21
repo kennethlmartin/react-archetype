@@ -2,10 +2,10 @@
  * @module app/pages/Home
  */
 
+import Helmet from 'react-helmet-async';
 import React, { Fragment } from 'react';
 
 import './Home.css';
-import Helmet from 'react-helmet-async';
 import Link from 'app/containers/Link';
 
 const HomePage = () => (

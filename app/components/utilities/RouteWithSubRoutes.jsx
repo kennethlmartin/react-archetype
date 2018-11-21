@@ -16,8 +16,7 @@ const RouteWithSubRoutes = ({ component: Component, routes, ...props }) => (
 );
 
 RouteWithSubRoutes.propTypes = {
-  exact: PropTypes.bool,
-  path: PropTypes.string.isRequired,
+  routes: PropTypes.array,
 };
 
 export default RouteWithSubRoutes;
