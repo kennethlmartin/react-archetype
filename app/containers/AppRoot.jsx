@@ -4,6 +4,7 @@
 
 import * as R from 'ramda';
 import Helmet from 'react-helmet-async';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { Route, Switch, withRouter } from 'react-router-dom';
@@ -13,10 +14,6 @@ import routes from 'app/routes';
 import { RouteWithSubRoutes, ScrollToTop } from 'app/components/utilities';
 
 class AppRoot extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderSubRoute(route, i) {
     return (
       <RouteWithSubRoutes key={i} {...route} />
@@ -27,8 +24,8 @@ class AppRoot extends Component {
     return (
       <div>
         <Helmet
-          defaultTitle="React Archetype"
-          titleTemplate="%s | React Archetype"
+          defaultTitle={this.props.metaTitle}
+          titleTemplate={`%s | ${this.props.metaTitle}`}
         />
         <ScrollToTop />
         <Switch key="root-content-switch">
@@ -41,5 +38,13 @@ class AppRoot extends Component {
     );
   }
 }
+
+AppRoot.propTypes = {
+  metaTitle: PropTypes.string,
+};
+
+AppRoot.defaultProps = {
+  metaTitle: 'React Archetype',
+};
 
 export default R.compose(hot(module), withRouter)(AppRoot);
