@@ -2,20 +2,21 @@
  * @module app/pages/{{ pascalCase name }}
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import Helmet from 'react-helmet-async';
 
 import './{{ pascalCase name }}.css';
 
 const {{ pascalCase name }}Page = () => (
-  <section id="{{ dashCase name }}-page">
+  <Fragment>
     <Helmet>
-      <title>{'{{ pascalCase name }} Page'}</title>
+      <title>{'{{ pascalCase name }}Page'}</title>
+      <body id="{{ dashCase name }}-page" />
     </Helmet>
     <h1>
       {'{{ pascalCase name }}Page'}
     </h1>
-  </section>
+  </Fragment>
 );
 
 export default {{ pascalCase name }}Page;

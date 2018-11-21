@@ -1,13 +1,9 @@
 /*
 =========================================
-app/pages/Example
+app/pages/ExampleNested
 =========================================
 */
 
-#example-page {
+#example-nested-page {
   text-align: center;
-
-  & .navigation a {
-    display: block;
-  }
 }

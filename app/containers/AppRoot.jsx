@@ -5,9 +5,9 @@
 import * as R from 'ramda';
 import Helmet from 'react-helmet-async';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { hot } from 'react-hot-loader';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import NotFoundPage from 'app/pages/NotFound';
 import routes from 'app/routes';
@@ -22,7 +22,7 @@ class AppRoot extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Helmet
           defaultTitle={this.props.metaTitle}
           titleTemplate={`%s | ${this.props.metaTitle}`}
@@ -34,7 +34,7 @@ class AppRoot extends Component {
           }
           <Route render={props => <NotFoundPage {...props} />} />
         </Switch>
-      </div>
+      </Fragment>
     );
   }
 }
@@ -47,4 +47,4 @@ AppRoot.defaultProps = {
   metaTitle: 'React Archetype',
 };
 
-export default R.compose(hot(module), withRouter)(AppRoot);
+export default R.compose(hot(module))(AppRoot);

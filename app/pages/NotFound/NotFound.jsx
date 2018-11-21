@@ -15,13 +15,13 @@ const NotFoundPage = () => (
     <RouteWithStatus status={404}>
       <section id="not-found-page">
         <Helmet>
-          <title>{'Not Found Page'}</title>
+          <title>{'NotFoundPage'}</title>
         </Helmet>
         <h1>
           {'NotFoundPage'}
         </h1>
         <Link route="HOME_PAGE">
-          {'Link to HomePage'}
+          {'Go Home'}
         </Link>
       </section>
     </RouteWithStatus>

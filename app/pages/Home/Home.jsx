@@ -2,20 +2,24 @@
  * @module app/pages/Home
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import './Home.css';
+import Helmet from 'react-helmet-async';
 import Link from 'app/containers/Link';
 
 const HomePage = () => (
-  <section id="home-page">
+  <Fragment>
+    <Helmet>
+      <body id="home-page" />
+    </Helmet>
     <h1>
       {'HomePage'}
     </h1>
-    <Link route="EXAMPLE_PAGE">
-      {'Link to ExamplePage'}
+    <Link route="EXAMPLE">
+      {'Go Example'}
     </Link>
-  </section>
+  </Fragment>
 );
 
 export default HomePage;
