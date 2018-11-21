@@ -1,9 +1,7 @@
 /*
 =========================================
-app/styles/main
+app/styles/normalize
 =========================================
 */
 
-@import "normalize.css";
-@import "variables.css";
-@import "base.css";
+@import-normalize;
