@@ -30,14 +30,13 @@ class AppRoot extends Component {
           defaultTitle="React Archetype"
           titleTemplate="%s | React Archetype"
         />
-        <ScrollToTop>
-          <Switch key="root-content-switch">
-            {
-              routes.map(this.renderSubRoute)
-            }
-            <Route render={props => <NotFoundPage {...props} />} />
-          </Switch>
-        </ScrollToTop>
+        <ScrollToTop />
+        <Switch key="root-content-switch">
+          {
+            routes.map(this.renderSubRoute)
+          }
+          <Route render={props => <NotFoundPage {...props} />} />
+        </Switch>
       </div>
     );
   }

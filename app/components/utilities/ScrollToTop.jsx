@@ -8,7 +8,6 @@ import { withRouter } from 'react-router-dom';
 
 class ScrollToTop extends Component {
   static propTypes = {
-    children: PropTypes.node,
     location: PropTypes.object,
   };
 
@@ -19,7 +18,7 @@ class ScrollToTop extends Component {
   }
 
   render() {
-    return this.props.children;
+    return null;
   }
 }
 
