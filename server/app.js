@@ -47,7 +47,7 @@ app.use(compress({
 // Error handler middleware
 app.use(errorHandler());
 
-// Mount and server static files
+// Mount and serve static files
 app.use(
   mount(config.get('app.assetsPath'),
     serve(config.get('dirs.build'), { maxage: config.get('cookieSession.maxAge') }),
