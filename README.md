@@ -24,7 +24,7 @@ This project uses [Docker](https://docs.docker.com/userguide) to provision a loc
 ### Getting Started
 1. `docker-compose build` - Build the docker compose images.
 1. Configure application [environment variables](#environment-variables)
-1. `docker-compose run npm i` - Install 'node_modules' to your host machine.
+1. `docker-compose run app npm i` - Install 'node_modules' to your host machine.
 1. `docker-compose run app` - Start the app server.
 1. `docker-compose run webpack` - Start the webpack server and dashboard.
 
