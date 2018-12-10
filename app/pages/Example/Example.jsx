@@ -5,12 +5,16 @@
 import Helmet from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import './Example.css';
 import Link from 'app/containers/Link';
+import { fetchExample } from 'app/state/example/actions';
+import { getExampleItems } from 'app/state/example/selectors';
 import { RouteWithSubRoutes } from 'app/components/utilities';
 
-const ExamplePage = ({ routes }) => (
+const ExamplePage = ({ exampleItems, fetchExample, routes }) => (
   <Fragment>
     <Helmet>
       <title>{'ExamplePage'}</title>
@@ -27,6 +31,12 @@ const ExamplePage = ({ routes }) => (
         {'Go Example Nested'}
       </Link>
     </div>
+    <section className="example-content">
+      <button onClick={() => fetchExample()}>{'fetch example'}</button>
+      <div>
+        {exampleItems}
+      </div>
+    </section>
     {
       routes.map((route, i) => (
         <RouteWithSubRoutes key={i} {...route} />
@@ -36,7 +46,17 @@ const ExamplePage = ({ routes }) => (
 );
 
 ExamplePage.propTypes = {
+  exampleItems: PropTypes.array,
+  fetchExample: PropTypes.func,
   routes: PropTypes.array,
 };
 
-export default ExamplePage;
+const mapStateToProps = state => ({
+  exampleItems: getExampleItems(state),
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  fetchExample,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExamplePage);

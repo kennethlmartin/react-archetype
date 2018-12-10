@@ -17,10 +17,10 @@ const getRoot = R.prop('example');
 export const getExample = getRoot;
 
 /**
- * Get the example key
+ * Get the example items
  *
  * @function
  * @param {Object} state - redux state
  * @returns {string} - example
  */
-export const getExampleKey = createSelector(getRoot, R.prop('exampleKey'));
+export const getExampleItems = createSelector(getRoot, R.prop('items'));

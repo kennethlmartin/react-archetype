@@ -2,10 +2,32 @@
  * @module app/state/{{ lowerCase name }}/reducer
  */
 
+import { createReducer } from 'app/state/reducers';
+import actionTypes from './types';
+
 const INITIAL_STATE = {
-  {{ lowerCase name }}Key: null,
+  isFetching: true,
+  items: [],
 };
 
-export default function reducer (state = INITIAL_STATE) {
-  return state;
-}
+const fetching = state => ({
+  ...state,
+  isFetching: true,
+});
+
+const fetchFailed = state => ({
+  ...state,
+  isFetching: false,
+});
+
+const fetchSuccess = (state, action) => ({
+  ...state,
+  isFetching: false,
+  items: action.data,
+});
+
+export default createReducer(INITIAL_STATE, {
+  [actionTypes.FETCHING]: fetching,
+  [actionTypes.FETCH_FAILED]: fetchFailed,
+  [actionTypes.FETCH_SUCCESS]: fetchSuccess,
+});

@@ -17,10 +17,10 @@ const getRoot = R.prop('{{ lowerCase name }}');
 export const get{{ pascalCase name }} = getRoot;
 
 /**
- * Get the {{ lowerCase name }} key
+ * Get the {{ lowerCase name }} items
  *
  * @function
  * @param {Object} state - redux state
  * @returns {string} - {{ lowerCase name }}
  */
-export const get{{ pascalCase name }}Key = createSelector(getRoot, R.prop('{{ lowerCase name }}Key'));
+export const get{{ pascalCase name }}Items = createSelector(getRoot, R.prop('items'));

@@ -10,4 +10,8 @@ app/pages/Example
   & .navigation a {
     display: block;
   }
+
+  & .example-content {
+    margin: 40px 0 0;
+  }
 }

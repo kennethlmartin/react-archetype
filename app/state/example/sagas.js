@@ -5,18 +5,24 @@
 /* eslint-disable no-console */
 
 import { all, takeLatest } from 'redux-saga/effects';
-import { actionTypes } from './constants';
 
-function* example() {
+import actionTypes from './types';
+import { sagaAction } from '../actions';
+
+function* fetch() {
   try {
-    yield console.log('example saga');
+    console.log('fetching example');
+    yield sagaAction(actionTypes.FETCHING);
+
+    yield console.log('example fetched');
+    yield sagaAction(actionTypes.FETCH_SUCCESS, { data: [1, 2, 3] });
   } catch (error) {
-    console.log(error);
+    yield sagaAction(actionTypes.FETCH_FAILED);
   }
 }
 
 export default function* exampleSaga() {
   yield all([
-    takeLatest(actionTypes.EXAMPLE, example),
+    takeLatest(actionTypes.FETCH, fetch),
   ]);
 }

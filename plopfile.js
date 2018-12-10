@@ -69,10 +69,6 @@ module.exports = function (plop) {
       templateFile: 'templates/app/state/example/actions.js.hbs',
       type: 'add',
     }, {
-      path: 'app/state/{{ dashCase name }}/constants.js',
-      templateFile: 'templates/app/state/example/constants.js.hbs',
-      type: 'add',
-    }, {
       path: 'app/state/{{ dashCase name }}/reducer.js',
       templateFile: 'templates/app/state/example/reducer.js.hbs',
       type: 'add',
@@ -83,6 +79,10 @@ module.exports = function (plop) {
     }, {
       path: 'app/state/{{ dashCase name }}/selectors.js',
       templateFile: 'templates/app/state/example/selectors.js.hbs',
+      type: 'add',
+    }, {
+      path: 'app/state/{{ dashCase name }}/types.js',
+      templateFile: 'templates/app/state/example/types.js.hbs',
       type: 'add',
     }, {
       path: 'app/state/{{ dashCase name }}/utilities.js',
