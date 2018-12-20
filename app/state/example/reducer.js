@@ -2,8 +2,8 @@
  * @module app/state/example/reducer
  */
 
-import { createReducer } from 'app/state/reducers';
 import actionTypes from './types';
+import { createReducer } from 'app/state/reducers';
 
 const INITIAL_STATE = {
   isFetching: true,
