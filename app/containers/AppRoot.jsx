@@ -32,7 +32,7 @@ class AppRoot extends Component {
           {
             routes.map(this.renderSubRoute)
           }
-          <Route render={props => <NotFoundPage {...props} />} />
+          <Route render={renderProps => <NotFoundPage {...renderProps} />} />
         </Switch>
       </Fragment>
     );
