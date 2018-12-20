@@ -5,6 +5,7 @@ ARG NODE_VERSION=11.1.0-alpine
 ###
 FROM node:$NODE_VERSION as base
 RUN apk --no-cache add git
+RUN npm install -g npm-check-updates
 
 ENV NODE_PATH=/src
 WORKDIR $NODE_PATH
