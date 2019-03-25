@@ -2,7 +2,7 @@
  * @module app/pages/Example
  */
 
-import Helmet from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';

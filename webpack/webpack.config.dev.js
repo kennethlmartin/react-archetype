@@ -60,4 +60,9 @@ module.exports = webpackMerge.smart(common, {
     }),
     new HotModuleReplacementPlugin(),
   ],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
 });

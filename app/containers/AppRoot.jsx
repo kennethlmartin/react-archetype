@@ -2,11 +2,10 @@
  * @module app/containers/AppRoot
  */
 
-import * as R from 'ramda';
-import Helmet from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
-import { hot } from 'react-hot-loader';
+import { Helmet } from 'react-helmet-async';
+import { hot } from 'react-hot-loader/root';
 import { Route, Switch } from 'react-router-dom';
 
 import NotFoundPage from 'app/pages/NotFound';
@@ -47,4 +46,4 @@ AppRoot.defaultProps = {
   metaTitle: 'React Archetype',
 };
 
-export default R.compose(hot(module))(AppRoot);
+export default hot(AppRoot);

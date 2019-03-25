@@ -2,7 +2,7 @@
  * @module app/pages/ExampleNested
  */
 
-import Helmet from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import React from 'react';
 
 import './ExampleNested.css';

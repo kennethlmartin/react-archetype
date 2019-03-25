@@ -2,5 +2,5 @@ import loadable from '@loadable/component';
 
 export default loadable(() => import(
   /* webpackChunkName: "not-found" */
-  './NotFound',
+  './NotFound' /* eslint-disable-line comma-dangle */
 ));

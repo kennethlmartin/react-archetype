@@ -51,7 +51,7 @@ module.exports = webpackMerge.smart(common, {
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
     }),
-    new CleanWebpackPlugin([config.get('dirs.build')], { allowExternal: true }),
+    new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env': {
         BABEL_ENV: JSON.stringify('production'),

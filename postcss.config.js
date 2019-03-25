@@ -5,8 +5,8 @@
 
 module.exports = {
   plugins: [
-    require('postcss-normalize'),
     require('postcss-import'),
+    require('postcss-normalize'),
     require('postcss-preset-env')({
       features: {
         'nesting-rules': true,
