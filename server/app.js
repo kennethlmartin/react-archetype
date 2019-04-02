@@ -15,6 +15,7 @@ const slashes = require('koa-remove-trailing-slashes');
 
 const config = require('config');
 const errorHandler = require('server/middleware/error-handler');
+const maintenance = require('server/middleware/maintenance');
 const router = require('server/routes');
 const { isDevelopment } = require('server/utilities');
 
@@ -46,6 +47,9 @@ app.use(compress({
 
 // Error handler middleware
 app.use(errorHandler());
+
+// Maintenance mode middleware
+app.use(maintenance());
 
 // Mount and serve static files
 app.use(

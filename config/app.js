@@ -21,6 +21,19 @@ module.exports = {
     env: 'APP_HOSTNAME',
     format: 'url',
   },
+  maintenance: {
+    enabled: {
+      default: false,
+      doc: 'is maintenance mode enabled?',
+      env: 'MAINTENANCE_ENABLED',
+      format: Boolean,
+    },
+    path: {
+      default: '/maintenance',
+      doc: 'app maintenance path',
+      format: String,
+    },
+  },
   port: {
     default: 3000,
     doc: 'server port',
