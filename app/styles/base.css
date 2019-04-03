@@ -4,6 +4,15 @@ app/styles/base
 =========================================
 */
 
-#app-root {
-  padding: 40px;
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
 }
