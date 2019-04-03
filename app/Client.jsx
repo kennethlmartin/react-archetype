@@ -11,7 +11,7 @@ import { loadableReady } from '@loadable/component';
 import { Provider } from 'react-redux';
 
 import 'app/styles/main.css';
-import AppRoot from 'app/containers/AppRoot';
+import AppRoot from 'app/AppRoot';
 import { configureStore } from './state/store';
 
 // Initial state prepared by the server

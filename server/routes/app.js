@@ -14,7 +14,7 @@ const { Provider } = require('react-redux');
 const { renderToNodeStream } = require('react-dom/server');
 const { StaticRouter } = require('react-router');
 
-const AppRoot = require('app/containers/AppRoot').default;
+const AppRoot = require('app/AppRoot').default;
 const config = require('config');
 const { configureStore } = require('app/state/store');
 const { preloadState, assetManifest } = require('server/middleware');

@@ -1,5 +1,5 @@
 /**
- * @module app/containers/AppRoot
+ * @module app/AppRoot
  */
 
 import PropTypes from 'prop-types';
