@@ -31,8 +31,10 @@ router.use(
 router.get('*', async (ctx) => {
   const assetExtractor = new ChunkExtractor({ stats: ctx.assetManifest });
   const helmetContext = {};
-  const history = createMemoryHistory();
   const routerContext = {};
+  const history = createMemoryHistory({
+    initialEntries: [ctx.url.replace(config.get('app.basePath'), '')],
+  });
   const reduxStore = configureStore(history, ctx.preloadedState);
 
   const app = (
@@ -43,7 +45,7 @@ router.get('*', async (ctx) => {
             <StaticRouter
               basename={config.get('app.basePath')}
               context={routerContext}
-              location={ctx.request.url}
+              location={ctx.url}
             >
               <AppRoot />
             </StaticRouter>
