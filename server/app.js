@@ -6,7 +6,6 @@ const Boom = require('boom');
 const compress = require('koa-compress');
 const helmet = require('koa-helmet');
 const Koa = require('koa');
-const koaReactViews = require('koa-react-view');
 const logger = require('koa-logger');
 const mount = require('koa-mount');
 const serve = require('koa-static');
@@ -17,7 +16,6 @@ const config = require('config');
 const errorHandler = require('server/middleware/error-handler');
 const maintenance = require('server/middleware/maintenance');
 const router = require('server/routes');
-const { isDevelopment } = require('server/utilities');
 
 var app;
 module.exports = app = new Koa();
@@ -57,12 +55,6 @@ app.use(
     serve(config.get('dirs.build'), { maxage: config.get('cookieSession.maxAge') }),
   ),
 );
-
-// Use react for view templates
-koaReactViews(app, {
-  cache: !isDevelopment(config.get('env')),
-  views: config.get('dirs.app'),
-});
 
 // Mount routes
 app.use(
