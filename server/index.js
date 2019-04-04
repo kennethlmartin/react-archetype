@@ -9,6 +9,7 @@ const chalk = require('chalk');
 const R = require('ramda');
 const Table = require('easy-table');
 
+require('@babel/polyfill');
 require('@babel/register')({ cache: true });
 require('ignore-styles');
 

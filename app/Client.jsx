@@ -2,6 +2,7 @@
  * @module app/Client
  */
 
+import '@babel/polyfill';
 import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
