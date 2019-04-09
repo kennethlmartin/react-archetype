@@ -1,0 +1,11 @@
+/*
+=========================================
+app/components/sections/PrimaryFooter
+=========================================
+*/
+
+.primary-footer {
+  background-color: gray(95);
+  grid-area: primary-footer;
+  min-height: 100px;
+}

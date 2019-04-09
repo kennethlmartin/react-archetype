@@ -28,7 +28,7 @@ router.use(
   preloadState(),
 );
 
-router.get('*', async (ctx) => {
+router.get('*', async ctx => {
   const assetExtractor = new ChunkExtractor({ stats: ctx.assetManifest });
   const helmetContext = {};
   const routerContext = {};
@@ -38,7 +38,7 @@ router.get('*', async (ctx) => {
   const reduxStore = configureStore(history, ctx.preloadedState);
 
   const app = (
-    <main id="app-root">
+    <div id="app-root">
       <ChunkExtractorManager extractor={assetExtractor}>
         <Provider store={reduxStore}>
           <HelmetProvider context={helmetContext}>
@@ -52,7 +52,7 @@ router.get('*', async (ctx) => {
           </HelmetProvider>
         </Provider>
       </ChunkExtractorManager>
-    </main>
+    </div>
   );
 
   await getDataFromTree(app);

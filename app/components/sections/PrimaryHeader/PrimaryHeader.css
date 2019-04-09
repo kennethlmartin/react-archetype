@@ -1,0 +1,11 @@
+/*
+=========================================
+app/components/PrimaryHeader
+=========================================
+*/
+
+.primary-header {
+  background-color: gray(95);
+  grid-area: primary-header;
+  min-height: 100px;
+}
