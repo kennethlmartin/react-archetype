@@ -46,7 +46,7 @@ cp -n .env.sample .env
 
 *You can also prefix docker commands with environment variables. Any variables passed from the CLI will take precedence over those in the `.env` or `docker-compose.yml` files.*
 
-**Available ENV variables:** These environment variables are used by the application at run-time and will need to be configure for the desired environment accordingly. The default values for these environment variables can be found within `/config`.
+**Available ENV variables:** These environment variables are used by the application at run-time and will need to be configured for the desired environment accordingly. The default values for these environment variables can be found within `/config`.
 
 - APP_ASSETS_PATH
 - APP_BASEPATH
