@@ -5,9 +5,9 @@
 /* eslint-disable no-console */
 console.time('start time');
 
-const chalk = require('chalk');
 const R = require('ramda');
 const Table = require('easy-table');
+const { bold, dim, green, underline } = require('colorette');
 
 require('@babel/polyfill');
 require('@babel/register')({ cache: true });
@@ -21,8 +21,8 @@ const printServerInfo = () => {
   const { basePath, hostname } = config.get('app');
 
   console.log(' ');
-  console.log(chalk.bold.green('✔ '), chalk.bold(pkg.name));
-  console.log(chalk.dim('* '), chalk.underline(hostname + basePath));
+  console.log(R.compose(bold, green)('✔ '), bold(pkg.name));
+  console.log(dim('* '), underline(hostname + basePath));
   console.log('');
 
   const t = new Table;
@@ -42,7 +42,7 @@ const printServerInfo = () => {
     }
   });
 
-  console.log(chalk.dim(t.print()));
+  console.log(dim(t.print()));
   console.timeEnd('start time');
   console.log('');
 };
