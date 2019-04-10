@@ -1,11 +1,9 @@
 # https://docs.docker.com/engine/reference/builder/#dockerignore-file
 
 .editorconfig
-.eslintcache
 .dockerignore
 .git
 .gitignore
-.sass-cache
 .nodemon-find-ref
 .*cache
 **/*.DS_Store

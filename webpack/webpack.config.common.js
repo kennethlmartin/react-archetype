@@ -18,14 +18,17 @@ module.exports = {
   module: {
     rules: [{
       include: config.get('dirs.app'),
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          // Disable modules in Babel to allow for Webpack tree-shaking
-          ['@babel/preset-env', { modules: false }],
-        ],
-      },
       test: constants.TESTS.JSX,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: config.get('dirs.babelLoaderCache'),
+          presets: [
+            // Disable modules in Babel to allow for Webpack tree-shaking
+            ['@babel/preset-env', { modules: false }],
+          ],
+        },
+      },
     }],
   },
   optimization: {
