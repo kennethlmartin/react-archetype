@@ -7,7 +7,7 @@
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { DefinePlugin, HashedModuleIdsPlugin } = require('webpack');
@@ -38,7 +38,9 @@ module.exports = webpackMerge.smart(common, {
   },
   optimization: {
     minimizer: [
-      new UglifyJSPlugin(),
+      new TerserPlugin({
+        extractComments: true,
+      }),
     ],
     noEmitOnErrors: true,
   },
