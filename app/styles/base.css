@@ -4,14 +4,6 @@ app/styles/base
 =========================================
 */
 
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
 #app-root {
   display: grid;
   grid-template-areas:
@@ -23,11 +15,30 @@ body {
   min-height: 100vh;
 }
 
-main {
+main[role="main"] {
   grid-area: main;
 }
 
-a:active,
-a:hover {
-  outline-width: 0;
+/* TEMP - REMOVE THESE */
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
+  justify-content: center;
+  text-align: center;
+
+  & h1,
+  & h2 {
+    margin: 40px;
+  }
+
+  & .navigation {
+    display: inline-block;
+
+    & a {
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
 }

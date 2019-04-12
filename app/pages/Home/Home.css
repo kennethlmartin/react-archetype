@@ -5,9 +5,5 @@ app/containers/HomePage
 */
 
 #home-page {
-  text-align: center;
 
-  & .navigation a {
-    display: block;
-  }
 }

@@ -4,4 +4,63 @@ app/styles/normalize
 =========================================
 */
 
+/* https://www.npmjs.com/package/postcss-normalize */
 @import-normalize;
+
+/*
+ * Additional Opinionated Resets
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    outline-width: 0;
+    text-decoration: underline;
+  }
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  & * {
+    pointer-events: none;
+  }
+}
