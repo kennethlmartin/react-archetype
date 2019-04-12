@@ -11,7 +11,7 @@ const config = require('config');
 let router;
 module.exports = router = new Router();
 
-router.get(config.get('app.maintenance.path'), async (ctx) => {
+router.get(config.get('app.maintenance.path'), async ctx => {
   const html = (
     <html>
       <head>

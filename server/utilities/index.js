@@ -5,7 +5,7 @@
 const R = require('ramda');
 
 /**
- * Environment
+ * Node Environment
  */
 exports.isDevelopment = R.equals('development');
 exports.isProduction = R.equals('production');
