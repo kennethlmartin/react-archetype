@@ -1,30 +1,28 @@
 /**
- * @module app/pages/Home
+ * @module app/pages/Login
  */
 
 import { Helmet } from 'react-helmet-async';
 import React, { Fragment } from 'react';
 
-import './Home.css';
+import './Login.css';
 import Link from 'app/containers/Link';
 
-const HomePage = () => (
+const LoginPage = () => (
   <Fragment>
     <Helmet>
-      <body id="home-page" />
+      <title>{'LoginPage'}</title>
+      <body id="login-page" />
     </Helmet>
     <h1>
-      {'HomePage'}
+      {'LoginPage'}
     </h1>
     <div className="navigation">
-      <Link route="LOGIN">
-        {'Go Login'}
-      </Link>
-      <Link route="EXAMPLE">
-        {'Go Example'}
+      <Link route="HOME">
+        {'Go Home'}
       </Link>
     </div>
   </Fragment>
 );
 
-export default HomePage;
+export default LoginPage;

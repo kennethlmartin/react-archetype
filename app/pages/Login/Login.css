@@ -1,10 +1,10 @@
 /*
 =========================================
-app/containers/HomePage
+app/pages/Login
 =========================================
 */
 
-#home-page {
+#login-page {
   text-align: center;
 
   & .navigation a {
