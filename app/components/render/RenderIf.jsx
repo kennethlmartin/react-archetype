@@ -4,13 +4,13 @@
 
 import PropTypes from 'prop-types';
 
-const RenderIf = ({ cond, render }) => (
-  cond ? render() : null
+const RenderIf = ({ children, cond }) => (
+  cond ? children() : null
 );
 
 RenderIf.propTypes = {
+  children: PropTypes.func,
   cond: PropTypes.any,
-  render: PropTypes.func,
 };
 
 export default RenderIf;
