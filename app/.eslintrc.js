@@ -4,11 +4,20 @@
  */
 
 module.exports = {
+  env: {
+    mocha: true,
+  },
   extends: [
     'archetype/configurations/browser',
     'archetype/rules/plugin-react',
     'archetype/rules/plugin-jsdoc',
   ],
+  globals: {
+    expect: 'readonly',
+    mount: 'readonly',
+    render: 'readonly',
+    shallow: 'readonly',
+  },
   root: true,
   settings: {
     react: {

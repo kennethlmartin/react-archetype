@@ -14,10 +14,10 @@ import * as R from 'ramda';
  */
 export const mapRoutes = R.reduce((acc, item) => {
   if (item.routes) {
-    acc = { ...acc, ...mapRoutes(item.routes) };
+    acc = R.compose(R.mergeRight(acc), mapRoutes)(item.routes);
   }
 
-  if (!item.id) {
+  if (!item.id || !item.path) {
     return acc;
   }
 

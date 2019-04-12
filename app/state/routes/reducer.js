@@ -7,6 +7,6 @@ import { mapRoutes } from './utilities';
 
 const INITIAL_STATE = mapRoutes(routes);
 
-export default function reducer (state = INITIAL_STATE) {
+export default function reducer(state = INITIAL_STATE) {
   return state;
 }

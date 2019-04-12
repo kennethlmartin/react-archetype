@@ -4,11 +4,17 @@
  */
 
 module.exports = {
+  env: {
+    mocha: true,
+  },
   extends: [
     'archetype/configurations/node',
     'archetype/rules/plugin-react',
     'archetype/rules/plugin-jsdoc',
   ],
+  globals: {
+    expect: 'readonly',
+  },
   parser: 'babel-eslint',
   root: true,
   settings: {
