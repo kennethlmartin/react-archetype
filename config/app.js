@@ -5,13 +5,13 @@
 module.exports = {
   assetsPath: {
     default: '/archetype/assets/',
-    doc: 'relative path to asset files',
+    doc: 'relative URL path to asset files',
     env: 'APP_ASSETS_PATH',
     format: String,
   },
   basePath: {
     default: '/archetype',
-    doc: 'root path of the app',
+    doc: 'root URL path of the app',
     env: 'APP_BASEPATH',
     format: String,
   },

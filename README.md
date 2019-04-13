@@ -50,15 +50,15 @@ cp -n .env.sample .env
 
 **Available ENV variables:** These environment variables are used by the application at run-time and will need to be configured for the desired environment accordingly. The default values for these environment variables can be found within `/config`.
 
-- APP_ASSETS_PATH
-- APP_BASEPATH
-- APP_HOSTNAME
-- APP_PORT
-- NODE_ENV
-- WEBPACK_ENABLED
-- WEBPACK_HOSTNAME
-- WEBPACK_MEASURE
-- WEBPACK_PORT
+- **APP_ASSETS_PATH** - Relative URL path to asset files
+- **APP_BASEPATH** - Root URL path of the app
+- **APP_HOSTNAME** - Hostname for application
+- **APP_PORT** - Application origin in format of protocol://hostname
+- **NODE_ENV** - Application environment
+- **WEBPACK_ENABLED** - Whether to use Webpack for application assets
+- **WEBPACK_HOSTNAME** - Webpack origin in format of protocol://hostname
+- **WEBPACK_MEASURE** - Whether to display webpack speed measuring
+- **WEBPACK_PORT** - Webpack server port
 
 ## Deployment
 [ADD DEPLOYMENT DESCRIPTION HERE]
