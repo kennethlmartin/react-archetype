@@ -20,7 +20,7 @@ const NotFoundPage = () => (
         <h1>
           {'NotFoundPage'}
         </h1>
-        <Link route="HOME_PAGE">
+        <Link route="HOME">
           {'Go Home'}
         </Link>
       </section>
