@@ -17,10 +17,10 @@ const getRoot = R.prop('app');
 export const getApp = getRoot;
 
 /**
- * Get the app basePath
+ * Get the app base path
  *
  * @function
  * @param {Object} state - redux state
  * @returns {string}
  */
-export const getBasePath = createSelector(getApp, R.prop('basePath'));
+export const getAppBasePath = createSelector(getApp, R.prop('basePath'));
