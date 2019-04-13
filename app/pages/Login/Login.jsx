@@ -2,8 +2,8 @@
  * @module app/pages/Login
  */
 
-import { Helmet } from 'react-helmet-async';
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import './Login.css';
 import Link from 'app/containers/Link';

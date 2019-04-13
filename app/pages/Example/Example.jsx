@@ -2,11 +2,11 @@
  * @module app/pages/Example
  */
 
-import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Helmet } from 'react-helmet-async';
 
 import './Example.css';
 import Link from 'app/containers/Link';

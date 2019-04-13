@@ -2,8 +2,8 @@
  * @module app/pages/Home
  */
 
-import { Helmet } from 'react-helmet-async';
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import './Home.css';
 import Link from 'app/containers/Link';
