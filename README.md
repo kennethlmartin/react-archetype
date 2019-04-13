@@ -10,6 +10,8 @@
   - [Getting Started](#getting-started)
   - [Running Scripts](#running-scripts)
   - [Environment Variables](#environment-variables)
+- **[Deployment](#deployment)**
+  - [Manually Build Docker Image](#manually-build-docker-image)
 
 ***
 
@@ -57,3 +59,12 @@ cp -n .env.sample .env
 - WEBPACK_HOSTNAME
 - WEBPACK_MEASURE
 - WEBPACK_PORT
+
+## Deployment
+[ADD DEPLOYMENT DESCRIPTION HERE]
+
+#### Manually Build Docker Image
+To manually build the docker image from your local host machine run the following commands.
+```
+docker build -t <IMAGE_NAME> .
+```
