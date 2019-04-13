@@ -2,7 +2,7 @@
  * @module app/pages/NotFound
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch } from 'react-router-dom';
 
@@ -13,9 +13,10 @@ import RouteWithStatus from 'app/components/utilities/RouteWithStatus';
 const NotFoundPage = () => (
   <Switch>
     <RouteWithStatus status={404}>
-      <section id="not-found-page">
+      <Fragment>
         <Helmet>
           <title>{'NotFoundPage'}</title>
+          <body id="not-found-page" />
         </Helmet>
         <h1>
           {'NotFoundPage'}
@@ -23,7 +24,7 @@ const NotFoundPage = () => (
         <Link route="HOME">
           {'Go Home'}
         </Link>
-      </section>
+      </Fragment>
     </RouteWithStatus>
   </Switch>
 );
