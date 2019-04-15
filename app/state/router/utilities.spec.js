@@ -6,11 +6,6 @@ import * as utilities from './utilities';
 
 describe('State / Router / Utilities', () => {
   describe('buildPathParams()', () => {
-    it('should be a string', () => {
-      const pathParams = utilities.buildPathParams(['foo', 'bar']);
-      expect(pathParams).to.be.an('string');
-    });
-
     it('should be empty when array is empty', () => {
       const pathParams = utilities.buildPathParams([]);
       expect(pathParams).to.be.empty;
@@ -23,7 +18,21 @@ describe('State / Router / Utilities', () => {
 
     it('should be formatted properly', () => {
       const pathParams = utilities.buildPathParams(['foo', 'bar']);
-      expect(pathParams).to.equal('/foo/bar');
+      expect(pathParams).to.be.an('string').to.equal('/foo/bar');
+    });
+  });
+
+  describe('buildWithParams()', () => {
+    const pathhname = '/example/:foo/:bar';
+
+    it('should append to pathname when an array', () => {
+      const pathParams = utilities.buildWithParams(pathhname, ['foo', 'bar']);
+      expect(pathParams).to.be.an('string').to.equal('/example/:foo/:bar/foo/bar');
+    });
+
+    it('should replace `:value` when an object', () => {
+      const pathParams = utilities.buildWithParams(pathhname, { bar: 'foo', foo: 'bar' });
+      expect(pathParams).to.be.an('string').to.equal('/example/bar/foo');
     });
   });
 

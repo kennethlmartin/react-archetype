@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 
 import { getRoutes } from 'app/state/routes/selectors';
-import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
+import { buildWithParams, buildQueryString } from 'app/state/router/utilities';
 
 const Link = ({
   children,
@@ -26,10 +26,10 @@ const Link = ({
 }) => (
   <NavLink
     {...R.pick(R.keys(NavLink.propTypes), props)}
-    className={cx(className, { disabled })}
+    className={cx('nav-link', className, { disabled })}
     target={newTab ? '_blank' : null}
     to={{
-      pathname: pathname + buildPathParams(params),
+      pathname: buildWithParams(pathname, params),
       search: preserveQuery ? location.search : buildQueryString(query),
     }}
   >
@@ -43,7 +43,10 @@ Link.propTypes = {
   disabled: PropTypes.bool,
   location: PropTypes.object,
   newTab: PropTypes.bool,
-  params: PropTypes.array,
+  params: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]),
   preserveQuery: PropTypes.bool,
   query: PropTypes.object,
 };

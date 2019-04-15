@@ -20,6 +20,30 @@ export const buildPathParams = R.cond([
 ]);
 
 /**
+ * Build pathname with path parameters
+ *
+ * @function
+ * @param {Object} pathname - pathname
+ * @param {Array} params - array of params
+ * @returns {string} - joined params as a path
+ */
+export const buildWithParams = R.curry((pathname, params) => {
+  if (R.isNil(params)) {
+    return pathname;
+  }
+
+  if (R.is(Array, params)) {
+    return pathname + buildPathParams(params);
+  }
+
+  for (const k in params) {
+    pathname = R.replace(`:${k}`, R.prop(k, params), pathname);
+  }
+
+  return pathname;
+});
+
+/**
  * Build query string from an object
  *
  * @function
