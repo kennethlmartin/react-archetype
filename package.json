@@ -14,6 +14,7 @@
     "plop": "plop",
     "start": "node server",
     "start:dev": "nodemon --trace-warnings --trace-deprecation server",
+    "start:storybook": "start-storybook --ci -p 3002",
     "start:webpack": "webpack-dashboard -m -- webpack-dev-server",
     "test": "mocha",
     "test:lint": "npm run lint:eslint && npm run lint:stylelint",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@loadable/webpack-plugin": "5.7.1",
+    "@storybook/react": "5.0.10",
     "babel-loader": "8.0.5",
     "chai": "4.2.0",
     "clean-webpack-plugin": "2.0.1",

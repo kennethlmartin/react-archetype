@@ -25,6 +25,13 @@ services:
     ports:
       - '3000:3000'
 
+  storybook:
+    << : *default-app
+    command: npm run start:storybook
+    container_name: react-archetype-storybook
+    ports:
+      - '3002:3002'
+
   webpack:
     << : *default-app
     command: npm run start:webpack
