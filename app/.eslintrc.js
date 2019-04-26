@@ -16,6 +16,7 @@ module.exports = {
     expect: 'readonly',
     mount: 'readonly',
     render: 'readonly',
+    sinon: 'readonly',
     shallow: 'readonly',
   },
   root: true,

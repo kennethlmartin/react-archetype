@@ -1,0 +1,25 @@
+/*
+=========================================
+app/components/elements/Button
+=========================================
+*/
+
+.button {
+  background-color: gray(90);
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  padding: 0.5rem 0.8rem;
+  transition: 0.4s background-color;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: gray(85);
+    cursor: pointer;
+  }
+}

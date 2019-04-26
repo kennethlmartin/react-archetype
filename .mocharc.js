@@ -6,6 +6,10 @@
 module.exports = {
   color: true,
   diff: true,
+  extension: [
+    'js',
+    'jsx',
+  ],
   reporter: 'spec',
   require: [
     '@babel/register',

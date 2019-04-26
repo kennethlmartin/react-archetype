@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet-async';
 
 import './Example.css';
+import Button from 'app/components/elements/Button';
 import Link from 'app/containers/Link';
 import { fetchExample } from 'app/state/example/actions';
 import { getExampleItems } from 'app/state/example/selectors';
@@ -32,7 +33,7 @@ const ExamplePage = ({ exampleItems, fetchExample, routes }) => (
       </Link>
     </div>
     <section className="example-content">
-      <button onClick={() => fetchExample()}>{'fetch example'}</button>
+      <Button onClick={() => fetchExample()}>{'fetch example'}</Button>
       <div>
         {exampleItems}
       </div>

@@ -4,6 +4,10 @@
  * @module .storybook/stories
  */
 
+import 'app/styles/main.css';
+
+const req = require.context('app', true, /\.stories\.js$/);
+
 export default function() {
-  // import stories here...
+  req.keys().forEach(filename => req(filename))
 }
