@@ -8,7 +8,6 @@ module.exports = {
   diff: true,
   reporter: 'spec',
   require: [
-    '@babel/polyfill',
     '@babel/register',
     'ignore-styles',
     'test/helpers.js',

@@ -9,7 +9,7 @@ const R = require('ramda');
 const Table = require('easy-table');
 const { bold, dim, green, underline } = require('colorette');
 
-require('@babel/polyfill');
+require('regenerator-runtime/runtime');
 require('@babel/register')({ cache: true });
 require('ignore-styles');
 

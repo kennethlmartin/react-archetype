@@ -2,7 +2,8 @@
  * @module app/Client
  */
 
-import '@babel/polyfill';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
