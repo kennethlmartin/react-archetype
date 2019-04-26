@@ -1,4 +1,4 @@
-ARG NODE_VERSION=11.12.0-alpine
+ARG NODE_VERSION=12.0.0-alpine
 
 ###
 # STAGE 1: Base
