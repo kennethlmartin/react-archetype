@@ -1,0 +1,13 @@
+/**
+ * @module app/components/{{ pascalCase name }}.story
+ */
+
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+
+import {{ pascalCase name }} from './{{ pascalCase name }}';
+
+storiesOf('Components|{{ pascalCase name }}', module)
+  .add('create story', () => (
+    <{{ pascalCase name }} />
+  ));

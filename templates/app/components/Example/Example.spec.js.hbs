@@ -1,0 +1,13 @@
+/**
+ * @module app/components/{{ pascalCase name }}.spec
+ */
+
+import React from 'react';
+import {{ pascalCase name }} from './{{ pascalCase name }}';
+
+describe('{{ pascalCase name }} Component', () => {
+  it('should have a test', () => {
+    const wrapper = shallow(<{{ pascalCase name }} />);
+    expect(wrapper.exists('TODO')).to.be.true;
+  });
+});

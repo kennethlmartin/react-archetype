@@ -17,6 +17,14 @@ module.exports = function (plop) {
       path: 'app/components/{{ pascalCase name }}/{{ pascalCase name }}.jsx',
       templateFile: 'templates/app/components/Example/Example.jsx.hbs',
       type: 'add',
+    }, {
+      path: 'app/components/{{ pascalCase name }}/{{ pascalCase name }}.spec.js',
+      templateFile: 'templates/app/components/Example/Example.spec.js.hbs',
+      type: 'add',
+    }, {
+      path: 'app/components/{{ pascalCase name }}/{{ pascalCase name }}.stories.js',
+      templateFile: 'templates/app/components/Example/Example.stories.js.hbs',
+      type: 'add',
     }],
     description: 'Generates a new component.',
     prompts: [{
