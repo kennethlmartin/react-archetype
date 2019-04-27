@@ -3,10 +3,9 @@
  */
 
 const Router = require('koa-router');
+const controller = require('server/controllers/healthcheck');
 
 let router;
 module.exports = router = new Router();
 
-router.get('/healthcheck', async ctx => {
-  ctx.body = 'ENABLED: Site is ok';
-});
+router.get('/healthcheck', controller.get);

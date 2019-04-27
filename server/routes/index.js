@@ -5,10 +5,7 @@
 const R = require('ramda');
 const Router = require('koa-router');
 
-const appRoute = require('./app');
 const config = require('config');
-const healthcheckRoute = require('./healthcheck');
-const maintenanceRoute = require('./maintenance');
 
 let router;
 module.exports = router = new Router({
@@ -21,7 +18,7 @@ module.exports = router = new Router({
 R.forEach(route => {
   router.use(route.routes());
 }, [
-  healthcheckRoute,
-  maintenanceRoute,
-  appRoute,
+  require('./healthcheck'),
+  require('./maintenance'),
+  require('./app'),
 ]);
