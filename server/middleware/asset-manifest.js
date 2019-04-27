@@ -14,8 +14,8 @@ const loadAssetManifest = async () => {
 
   try {
     const assetManifest = path.basename(config.get('files.assetManifest'));
-    const { port } = config.get('webpack');
     const { assetsPath } = config.get('app');
+    const { port } = config.get('webpack');
 
     const response = await axios.get(`http://webpack:${port}${assetsPath}${assetManifest}`);
     return response.data;

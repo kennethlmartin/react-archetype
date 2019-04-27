@@ -1,11 +1,11 @@
 /**
- * Extendable webpack configuration for storybook
+ * Extendable webpack configuration for Storybook
  *
  * @module .storybook/webpack.config
  * @see https://storybook.js.org/docs/configurations/custom-webpack-config/
  */
 
- const path = require('path');
+const path = require('path');
 const constants = require('webpack/webpack.constants');
 
  module.exports = async ({ config, mode }) => {

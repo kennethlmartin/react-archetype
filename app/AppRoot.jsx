@@ -9,10 +9,12 @@ import { hot } from 'react-hot-loader/root';
 import { Route, Switch } from 'react-router-dom';
 
 import NotFoundPage from 'app/pages/NotFound';
-import routes from 'app/routes';
 import PrimaryFooter from 'app/components/sections/PrimaryFooter';
 import PrimaryHeader from 'app/components/sections/PrimaryHeader';
-import { RouteWithCond, RouteWithSubRoutes, ScrollToTop } from 'app/components/utilities';
+import routes from 'app/routes';
+import RouteWithCond from 'app/components/utilities/RouteWithCond';
+import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';
+import ScrollToTop from 'app/components/utilities/ScrollToTop';
 
 const AppRoot = ({ metaTitle }) => (
   <Fragment>
@@ -51,7 +53,7 @@ AppRoot.propTypes = {
 };
 
 AppRoot.defaultProps = {
-  metaTitle: 'React Archetype',
+  metaTitle: 'react-archetype',
 };
 
 export default hot(AppRoot);

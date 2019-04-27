@@ -11,9 +11,9 @@ import { Helmet } from 'react-helmet-async';
 import './Example.css';
 import Button from 'app/components/elements/Button';
 import Link from 'app/containers/Link';
+import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';
 import { fetchExample } from 'app/state/example/actions';
 import { getExampleItems } from 'app/state/example/selectors';
-import { RouteWithSubRoutes } from 'app/components/utilities';
 
 const ExamplePage = ({ exampleItems, fetchExample, routes }) => (
   <Fragment>
@@ -38,11 +38,9 @@ const ExamplePage = ({ exampleItems, fetchExample, routes }) => (
         {exampleItems}
       </div>
     </section>
-    {
-      routes.map((route, i) => (
-        <RouteWithSubRoutes key={i} {...route} />
-      ))
-    }
+    {routes.map((route, i) => (
+      <RouteWithSubRoutes key={i} {...route} />
+    ))}
   </Fragment>
 );
 

@@ -19,7 +19,7 @@ main[role="main"] {
   grid-area: main;
 }
 
-/* TEMP - REMOVE THESE */
+/* TEMP - REMOVE THESE - react-archetype ONLY */
 main {
   align-items: center;
   display: flex;

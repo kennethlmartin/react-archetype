@@ -4,7 +4,7 @@
 
 module.exports = {
   key: {
-    default: 'archetype:sess',
+    default: 'react-archetype:sess',
     doc: 'cookie key',
     format: String,
   },

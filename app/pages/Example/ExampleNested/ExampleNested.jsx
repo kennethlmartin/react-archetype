@@ -1,5 +1,5 @@
 /**
- * @module app/pages/ExampleNested
+ * @module app/pages/Example/ExampleNested
  */
 
 import React from 'react';
