@@ -11,7 +11,8 @@
   - [Running Scripts](#running-scripts)
   - [Environment Variables](#environment-variables)
 - **[Deployment](#deployment)**
-  - [Manually Build Docker Image](#manually-build-docker-image)
+  - [Build Docker Image](#build-docker-image)
+  - [Run Docker Image](#run-docker-image)
 
 ***
 
@@ -63,8 +64,14 @@ cp -n .env.sample .env
 ## Deployment
 [ADD DEPLOYMENT DESCRIPTION HERE]
 
-#### Manually Build Docker Image
+#### Build Docker Image
 To manually build the docker image from your local host machine run the following commands.
 ```
 docker build -t <IMAGE_NAME> .
+```
+
+#### Run Docker Image
+To manually run the docker image from your local host machine run the following commands.
+```
+docker run -it --rm -p 80:3000 --env NODE_ENV=production <IMAGE_NAME>
 ```
