@@ -1,5 +1,5 @@
 /**
- * @module app/components/elements/Button/Button.story
+ * @module app/components/elements/Button.stories
  */
 
 import React from 'react';

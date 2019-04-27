@@ -1,5 +1,5 @@
 /**
- * @module app/components/elements/Button/Button.spec
+ * @module app/components/elements/Button.spec
  */
 
 import React from 'react';
