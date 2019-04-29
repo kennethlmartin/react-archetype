@@ -4,7 +4,7 @@
  * @module .storybook/stories
  */
 
-import 'app/styles/main.css';
+import 'app/styles/main.pcss';
 
 const req = require.context('app', true, /\.stories\.js$/);
 

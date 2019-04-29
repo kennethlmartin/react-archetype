@@ -9,7 +9,7 @@ module.exports = {
     VENDOR: 'vendor',
   },
   TESTS: {
-    CSS: /\.css$/,
+    CSS: /\.pcss$/,
     JSX: /\.jsx?$/,
     SVG: /\.svg$/,
   },

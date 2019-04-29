@@ -6,7 +6,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Button.css';
+import './Button.pcss';
 
 const Button = ({ children, disabled, onClick }) => (
   <button

@@ -10,8 +10,8 @@ module.exports = function(plop) {
       templateFile: 'templates/components/Example/index.js.hbs',
       type: 'add',
     }, {
-      path: 'app/components/{{ lowerCase path }}{{ pascalCase name }}/{{ pascalCase name }}.css',
-      templateFile: 'templates/components/Example/Example.css.hbs',
+      path: 'app/components/{{ lowerCase path }}{{ pascalCase name }}/{{ pascalCase name }}.pcss',
+      templateFile: 'templates/components/Example/Example.pcss.hbs',
       type: 'add',
     }, {
       path: 'app/components/{{ lowerCase path }}{{ pascalCase name }}/{{ pascalCase name }}.jsx',
@@ -57,8 +57,8 @@ module.exports = function(plop) {
       templateFile: 'templates/pages/Example/index.js.hbs',
       type: 'add',
     }, {
-      path: 'app/pages/{{ pascalCase name }}/{{ pascalCase name }}.css',
-      templateFile: 'templates/pages/Example/Example.css.hbs',
+      path: 'app/pages/{{ pascalCase name }}/{{ pascalCase name }}.pcss',
+      templateFile: 'templates/pages/Example/Example.pcss.hbs',
       type: 'add',
     }, {
       path: 'app/pages/{{ pascalCase name }}/{{ pascalCase name }}.jsx',

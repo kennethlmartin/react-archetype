@@ -12,7 +12,7 @@ import { hydrate } from 'react-dom';
 import { loadableReady } from '@loadable/component';
 import { Provider } from 'react-redux';
 
-import 'app/styles/main.css';
+import 'app/styles/main.pcss';
 import AppRoot from 'app/AppRoot';
 import { configureStore } from './state/store';
 

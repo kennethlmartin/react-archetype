@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import './PrimaryFooter.css';
+import './PrimaryFooter.pcss';
 
 const PrimaryFooter = () => (
   <footer className="primary-footer" />

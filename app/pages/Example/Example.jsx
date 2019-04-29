@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Helmet } from 'react-helmet-async';
 
-import './Example.css';
+import './Example.pcss';
 import Button from 'app/components/elements/Button';
 import Link from 'app/containers/Link';
 import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';

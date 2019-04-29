@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import './PrimaryHeader.css';
+import './PrimaryHeader.pcss';
 
 const PrimaryHeader = () => (
   <header className="primary-header" />

@@ -5,7 +5,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import './ExampleNested.css';
+import './ExampleNested.pcss';
 
 const ExampleNestedPage = () => (
   <div id="example-nested-page">

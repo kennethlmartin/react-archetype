@@ -5,7 +5,7 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 
-import './Login.css';
+import './Login.pcss';
 import Link from 'app/containers/Link';
 
 const LoginPage = () => (

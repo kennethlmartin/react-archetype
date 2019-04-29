@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack --progress",
     "lint:eslint": "eslint . --ext .js --ext .jsx --cache",
-    "lint:stylelint": "stylelint ./app/**/*.css --cache",
+    "lint:stylelint": "stylelint ./app/**/*.pcss --cache",
     "plop": "plop",
     "start": "node server",
     "start:dev": "nodemon --trace-warnings --trace-deprecation server",

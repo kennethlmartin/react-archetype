@@ -6,7 +6,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch } from 'react-router-dom';
 
-import './NotFound.css';
+import './NotFound.pcss';
 import Link from 'app/containers/Link';
 import RouteWithStatus from 'app/components/utilities/RouteWithStatus';
 
