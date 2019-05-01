@@ -11,8 +11,14 @@ import { addDecorator, addParameters, configure } from '@storybook/react';
 import stories from './stories';
 import theme from './theme';
 
+const styles = {
+  padding: '15px',
+};
+
 addDecorator(storyFn => (
-  <div style={{ padding: '15px' }}>{storyFn()}</div>
+  <div style={styles}>
+    {storyFn()}
+  </div>
 ));
 
 addParameters({
