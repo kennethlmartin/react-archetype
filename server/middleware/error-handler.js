@@ -3,7 +3,7 @@
  */
 
 const Boom = require('boom');
-const { is5xxError } = require('server/utilities');
+const { is5xxError } = require('app/utilities');
 
 module.exports = function errorHandler() {
   return async (ctx, next) => {
