@@ -1,8 +1,20 @@
+![react-archetype image logo](https://i.ibb.co/WDCcSZV/react-archetype-logo.png)
+
+[![David](https://img.shields.io/david/kennethlmartin/react-archetype.svg?style=for-the-badge)](https://david-dm.org/kennethlmartin/react-archetype)
+
+### Features
+- **Universal app with server-side rendering**
+- **Storybook integration**
+- **Docker support**
+- **Bundle and code splitting**
+- **Linting with Eslint and Stylelint**
+- **Next generation styles with PostCSS**
+- **State management with Redux or GraphQL**
+- **Scalable project structure and file organization**
+
 ***
 **React Archetype** - Boilerplate for React projects.
 ***
-
-[![David](https://img.shields.io/david/kennethlmartin/react-archetype.svg?style=for-the-badge)](https://david-dm.org/kennethlmartin/react-archetype)
 
 ### Table of Contents
 - **[Development](#development)**
