@@ -9,11 +9,11 @@ module.exports = {
   extension: [
     'js',
     'jsx',
+    'ts',
+    'tsx',
   ],
   reporter: 'spec',
   require: [
-    '@babel/register',
-    'ignore-styles',
     'test/helpers.js',
   ],
   spec: [

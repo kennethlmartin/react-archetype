@@ -18,7 +18,7 @@ module.exports = {
   module: {
     rules: [{
       include: config.get('dirs.app'),
-      test: constants.TESTS.JSX,
+      test: constants.TESTS.JS,
       use: {
         loader: 'babel-loader',
         options: {

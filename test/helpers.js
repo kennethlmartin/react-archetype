@@ -7,6 +7,14 @@ const sinon = require('sinon');
 const { expect } = require('chai');
 const { mount, render, shallow, configure } = require('enzyme');
 
+const config = require('config');
+
+require('regenerator-runtime/runtime');
+require('@babel/register')({
+  extensions: config.get('files.extensions'),
+});
+require('ignore-styles');
+
 configure({ adapter: new Adapter() });
 
 global.expect = expect;

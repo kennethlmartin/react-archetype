@@ -10,7 +10,7 @@ module.exports = {
   },
   TESTS: {
     CSS: /\.pcss$/,
-    JSX: /\.jsx?$/,
+    JS: /\.(t|j)sx?$/,
     SVG: /\.svg$/,
   },
 };

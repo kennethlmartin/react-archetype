@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"allowJs": false,
+		"isolatedModules": true,
+		"moduleResolution": "node",
+		"noEmit": true,
+		"strict": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "target": "esnext",
+  },
+	"include": [
+		"app"
+	]
+}

@@ -22,7 +22,7 @@ const smp = new SpeedMeasurePlugin({
  */
 const webpackModulePaths = {
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: config.get('files.extensions'),
     modules: [__dirname, 'node_modules'],
   },
 };

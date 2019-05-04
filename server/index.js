@@ -9,12 +9,17 @@ const R = require('ramda');
 const Table = require('easy-table');
 const { bold, dim, green, underline } = require('colorette');
 
+const config = require('config');
+const { isDevelopment } = require('server/utilities');
+
 require('regenerator-runtime/runtime');
-require('@babel/register')({ cache: true });
+require('@babel/register')({
+  cache: !isDevelopment(config.get('env')),
+  extensions: config.get('files.extensions'),
+});
 require('ignore-styles');
 
 const app = require('server/app');
-const config = require('config');
 const pkg = require('package.json');
 
 const printServerInfo = () => {
