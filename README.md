@@ -3,13 +3,13 @@
 [![David](https://img.shields.io/david/kennethlmartin/react-archetype.svg?style=for-the-badge)](https://david-dm.org/kennethlmartin/react-archetype)
 
 ### Features
-- **Universal app with server-side rendering**
-- **Storybook integration**
-- **Docker support**
-- **Bundle and code splitting**
+- **Universal app with server-side render streaming**
+- **Full Docker support for development and production**
+- **State management with Redux and/or GraphQL**
+- **Flexible bundle and code splitting**
 - **Linting with Eslint and Stylelint**
 - **Next generation styles with PostCSS**
-- **State management with Redux or GraphQL**
+- **Storybook integration for easy styleguide generation**
 - **Scalable project structure and file organization**
 
 ***
