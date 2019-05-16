@@ -5,12 +5,12 @@
 import React, { ReactElement } from 'react';
 import { Route } from 'react-router-dom';
 
-export interface RouteWithSubRoutesProps {
+type Props = {
   component: ReactElement;
   routes: object;
 }
 
-const RouteWithSubRoutes = ({ component: Component, routes, ...props }: RouteWithSubRoutesProps) => (
+const RouteWithSubRoutes = ({ component: Component, routes, ...props }: Props) => (
   <Route
     render={renderProps => (
       <Component {...renderProps} routes={routes} />

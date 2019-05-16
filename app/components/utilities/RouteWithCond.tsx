@@ -5,12 +5,12 @@
 import React, { Component, ReactElement } from 'react';
 import { Route } from 'react-router-dom';
 
-export interface RenderWithCondProps {
+type Props = {
   children: ReactElement;
   cond: boolean | undefined;
 }
 
-const RenderWithCond = ({ children, cond, ...props }: RenderWithCondProps) => (
+const RenderWithCond = ({ children, cond, ...props }: Props) => (
   <Route
     {...props}
     component={undefined}

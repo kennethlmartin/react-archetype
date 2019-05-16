@@ -7,13 +7,13 @@ import React, { MouseEvent } from 'react';
 
 import './Button.pcss';
 
-export interface ButtonProps {
+type Props = {
   children: string;
   disabled?: boolean;
   onClick(e: MouseEvent<HTMLElement>): void;
 }
 
-const Button = ({ children, disabled, onClick }: ButtonProps) => (
+const Button = ({ children, disabled, onClick }: Props) => (
   <button
     className={cx('button')}
     disabled={disabled}

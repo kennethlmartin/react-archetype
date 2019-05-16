@@ -2,17 +2,18 @@
  * @module app/components/render/RenderMarkup
  */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 
-export interface RenderMarkupProps {
+type Props = {
   html: string;
   tag: string;
 }
 
-/* eslint-disable react/no-danger */
-const RenderMarkup = ({ html, tag: Tag, ...props }: RenderMarkupProps) => (
-  <Tag {...props} dangerouslySetInnerHTML={{ __html: html }} />
+const RenderMarkup = ({ html, tag, ...props }: Props) => (
+  React.createElement(tag, {
+    ...props,
+    dangerouslySetInnerHTML: { __html: html },
+  })
 );
 
 RenderMarkup.defaultProps = {

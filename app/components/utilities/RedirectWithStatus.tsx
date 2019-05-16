@@ -5,17 +5,17 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
-export interface RedirectWithStatusProps {
+type Props = {
   from: string;
   to: string | object;
-  status: number;
+  statusCode: number;
 }
 
-const RedirectWithStatus = ({ from, to, status }: RedirectWithStatusProps) => (
+const RedirectWithStatus = ({ from, to, statusCode }: Props) => (
   <Route
     render={({ staticContext }) => {
       if (staticContext) {
-        staticContext.status = status;
+        staticContext.statusCode = statusCode;
       }
 
       return <Redirect from={from} to={to} />;

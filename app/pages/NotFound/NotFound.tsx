@@ -12,7 +12,7 @@ import RouteWithStatus from 'app/components/utilities/RouteWithStatus';
 
 const NotFoundPage = () => (
   <Switch>
-    <RouteWithStatus status={404}>
+    <RouteWithStatus statusCode={404}>
       <Fragment>
         <Helmet>
           <title>{'NotFoundPage'}</title>

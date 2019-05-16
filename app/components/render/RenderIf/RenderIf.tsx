@@ -4,12 +4,12 @@
 
 import { FunctionComponent, Component } from 'react';
 
-export interface RenderIfProps {
+type Props = {
   cond: boolean;
   children(): void;
 }
 
-const RenderIf = ({ children, cond }: RenderIfProps) => (
+const RenderIf = ({ children, cond }: Props) => (
   cond ? children() : null
 );
 

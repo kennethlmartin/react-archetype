@@ -16,13 +16,13 @@ import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';
 import { fetchExample } from 'app/state/example/actions';
 import { getExampleItems } from 'app/state/example/selectors';
 
-interface PropTypes {
+type Props = {
   exampleItems: Array<number>;
   fetchExample: Function;
   routes: Array<RouteProps>;
 }
 
-const ExamplePage = ({ exampleItems, fetchExample, routes }: PropTypes) => (
+const ExamplePage = ({ exampleItems, fetchExample, routes }: Props) => (
   <Fragment>
     <Helmet>
       <title>{'ExamplePage'}</title>

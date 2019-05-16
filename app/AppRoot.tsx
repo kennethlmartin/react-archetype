@@ -15,11 +15,11 @@ import RouteWithCond from 'app/components/utilities/RouteWithCond';
 import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';
 import ScrollToTop from 'app/components/utilities/ScrollToTop';
 
-interface PropTypes {
+type Props = {
   metaTitle?: string;
 }
 
-const AppRoot = ({ metaTitle }: PropTypes) => (
+const AppRoot = ({ metaTitle }: Props) => (
   <Fragment>
     <Helmet
       defaultTitle={metaTitle}

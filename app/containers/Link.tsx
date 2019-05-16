@@ -11,7 +11,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { getRoutes } from 'app/state/routes/selectors';
 import { buildWithParams, buildQueryString } from 'app/state/router/utilities';
 
-interface PropTypes {
+type Props = {
   children: Component,
   className: string,
   disabled: boolean,
@@ -34,7 +34,7 @@ const Link = ({
   preserveQuery,
   query,
   ...props
-}: PropTypes) => (
+}: Props) => (
   <NavLink
     {...pick(keys(NavLink.propTypes), props)}
     className={cx('nav-link', className, { disabled })}

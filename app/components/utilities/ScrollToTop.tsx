@@ -5,12 +5,12 @@
 import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-interface PropTypes {
+type Props = {
   location: string;
 }
 
-class ScrollToTop extends Component<PropTypes> {
-  componentDidUpdate(prevProps: PropTypes) {
+class ScrollToTop extends Component<Props> {
+  componentDidUpdate(prevProps: Props) {
     if (this.props.location !== prevProps.location) {
       window.scrollTo(0, 0);
     }

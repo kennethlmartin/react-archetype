@@ -46,8 +46,8 @@ exports.get = async ctx => {
 
   await getDataFromTree(app);
 
-  if (routerContext.status) {
-    ctx.status = routerContext.status;
+  if (routerContext.statusCode) {
+    ctx.status = routerContext.statusCode;
   }
 
   if (routerContext.url) {

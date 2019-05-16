@@ -5,16 +5,16 @@
 import React, { ReactElement } from 'react';
 import { Route } from 'react-router-dom';
 
-export interface RouteWithStatusProps {
+type Props = {
   children: ReactElement;
-  status: number;
+  statusCode: number;
 }
 
-const RouteWithStatus = ({ children, status }: RouteWithStatusProps) => (
+const RouteWithStatus = ({ children, statusCode }: Props) => (
   <Route
     render={({ staticContext }) => {
       if (staticContext) {
-        staticContext.status = status;
+        staticContext.statusCode = statusCode;
       }
 
       return children;

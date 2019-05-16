@@ -10,7 +10,7 @@ import { Redirect, withRouter } from 'react-router-dom';
 import { getRoutes } from 'app/state/routes/selectors';
 import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
 
-interface PropTypes {
+type Props = {
   location: object,
   params: [],
   pathname: string,
@@ -18,7 +18,7 @@ interface PropTypes {
   query: object,
 }
 
-const RedirectContainer = ({ location, params, pathname, preserveQuery, query, ...props }: PropTypes) => (
+const RedirectContainer = ({ location, params, pathname, preserveQuery, query, ...props }: Props) => (
   <Redirect
     {...pick(keys(Redirect.propTypes), props)}
     to={{
