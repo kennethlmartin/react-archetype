@@ -2,15 +2,12 @@
  * @module app/components/utilities/RouteWithSubRoutes
  */
 
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
-type Props = {
-  component: ReactElement;
-  routes: object;
-}
+import { RouteInterface } from 'app/routes';
 
-const RouteWithSubRoutes = ({ component: Component, routes, ...props }: Props) => (
+const RouteWithSubRoutes = ({ component: Component, routes, ...props }: RouteInterface) => (
   <Route
     render={renderProps => (
       <Component {...renderProps} routes={routes} />

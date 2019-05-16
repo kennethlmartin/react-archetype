@@ -38,7 +38,7 @@ const AppRoot = ({ metaTitle }: Props) => (
         {routes.map((route, i: number) => (
           <RouteWithSubRoutes key={i} {...route} />
         ))}
-        <Route render={renderProps => <NotFoundPage {...renderProps} />} />
+        <Route render={() => <NotFoundPage />} />
       </Switch>
     </main>
     <Switch>

@@ -2,8 +2,8 @@
  * @module app/routes
  */
 
+import React from 'react';
 import { LoadableComponent } from '@loadable/component';
-import { ReactElement } from 'react';
 
 import HomePage from 'app/pages/Home';
 import ExamplePage from 'app/pages/Example';
@@ -11,7 +11,7 @@ import ExampleNestedPage from 'app/pages/Example/ExampleNested';
 import LoginPage from 'app/pages/Login';
 
 export interface RouteInterface {
-  component: LoadableComponent<any> | ReactElement;
+  component: LoadableComponent<any> | React.ReactType;
   exact?: boolean;
   id: string;
   isBare?: boolean;

@@ -2,7 +2,7 @@
  * @module app/containers/Redirect
  */
 
-import React, { Props } from 'react';
+import React from 'react';
 import { compose, keys, pick, prop } from 'ramda';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';

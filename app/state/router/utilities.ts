@@ -2,7 +2,6 @@
  * @module app/state/router/utilities
  */
 
-// @ts-ignore
 import * as R from 'ramda';
 import Qs from 'qs';
 import { push } from 'connected-react-router';
