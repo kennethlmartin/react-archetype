@@ -3,24 +3,46 @@
  */
 
 import React from 'react';
-import { compose, keys, pick, prop } from 'ramda';
+import { pick } from 'ramda';
 import { connect } from 'react-redux';
+import { Location } from 'history';
 import { Redirect, withRouter } from 'react-router-dom';
 
-import { getRoutes } from 'app/state/routes/selectors';
+import { getRoute } from 'app/state/routes/selectors';
 import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
 
-type Props = {
-  location: object,
+interface OwnProps {
+  location: Location,
   params: [],
-  pathname: string,
   preserveQuery: boolean,
   query: object,
+  route: string,
 }
 
-const RedirectContainer = ({ location, params, pathname, preserveQuery, query, ...props }: Props) => (
+interface StateProps {
+  pathname: string,
+}
+
+type Props = OwnProps & StateProps
+
+const RedirectProps: Array<any> = [
+  'to',
+  'push',
+  'from',
+  'exact',
+  'strict',
+];
+
+const RedirectContainer = ({
+  location,
+  params,
+  pathname,
+  preserveQuery,
+  query,
+  ...props
+}: Props) => (
   <Redirect
-    {...pick(keys(Redirect.propTypes), props)}
+    {...pick(RedirectProps, props)}
     to={{
       pathname: pathname + buildPathParams(params),
       search: preserveQuery ? location.search : buildQueryString(query),
@@ -28,8 +50,9 @@ const RedirectContainer = ({ location, params, pathname, preserveQuery, query, .
   />
 );
 
-const mapStateToProps = (state, { route }) => ({
-  pathname: compose(prop(route), getRoutes)(state),
+const mapStateToProps = (state: any, { route }: OwnProps): StateProps => ({
+  pathname: getRoute(state, route),
 });
 
-export default compose(withRouter, connect(mapStateToProps))(RedirectContainer);
+const ConnectComponent: React.ReactType = connect(mapStateToProps)(RedirectContainer);
+export default withRouter(ConnectComponent);

@@ -30,7 +30,7 @@ interface StateProps {
 
 type Props = OwnProps & StateProps
 
-const NavLinkProps: Array<string> = [
+const NavLinkProps: Array<any> = [
   'activeClassName',
   'activeStyle',
   'aria-current',
@@ -45,7 +45,7 @@ const NavLinkProps: Array<string> = [
   'to',
 ];
 
-const Link = ({
+const LinkContainer = ({
   children,
   className,
   disabled,
@@ -74,5 +74,5 @@ const mapStateToProps = (state: any, { route }: OwnProps): StateProps => ({
   pathname: getRoute(state, route),
 });
 
-const ConnectComponent: React.ReactType = connect(mapStateToProps)(Link);
+const ConnectComponent: React.ReactType = connect(mapStateToProps)(LinkContainer);
 export default withRouter(ConnectComponent);
