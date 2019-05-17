@@ -2,7 +2,7 @@
  * @module app/components/utilities/RenderWithCond
  */
 
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { Route } from 'react-router-dom';
 
 type Props = {

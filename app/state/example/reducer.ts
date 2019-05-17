@@ -20,7 +20,11 @@ const fetchFailed = (state: object) => ({
   isFetching: false,
 });
 
-const fetchSuccess = (state: object, action) => ({
+type FetchSuccessAction = {
+  data: object,
+}
+
+const fetchSuccess = (state: object, action: FetchSuccessAction) => ({
   ...state,
   isFetching: false,
   items: action.data,

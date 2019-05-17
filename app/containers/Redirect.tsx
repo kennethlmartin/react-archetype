@@ -12,18 +12,18 @@ import { getRoute } from 'app/state/routes/selectors';
 import { buildPathParams, buildQueryString } from 'app/state/router/utilities';
 
 interface OwnProps {
-  location: Location,
-  params: [],
-  preserveQuery: boolean,
-  query: object,
-  route: string,
+  location: Location;
+  params: [];
+  preserveQuery: boolean;
+  query: object;
+  route: string;
 }
 
 interface StateProps {
-  pathname: string,
+  pathname: string;
 }
 
-type Props = OwnProps & StateProps
+type Props = OwnProps & StateProps;
 
 const RedirectProps: Array<any> = [
   'to',
@@ -50,7 +50,7 @@ const RedirectContainer = ({
   />
 );
 
-const mapStateToProps = (state: any, { route }: OwnProps): StateProps => ({
+const mapStateToProps = (state: object, { route }: OwnProps): StateProps => ({
   pathname: getRoute(state, route),
 });
 

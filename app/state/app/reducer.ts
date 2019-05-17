@@ -2,6 +2,10 @@
  * @module app/state/app/reducer
  */
 
-export default function reducer(state = {}) {
+export interface AppState {
+  basePath?: string;
+}
+
+export default function reducer(state: AppState = {}) {
   return state;
 }

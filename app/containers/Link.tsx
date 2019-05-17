@@ -13,22 +13,22 @@ import { getRoute } from 'app/state/routes/selectors';
 import { buildWithParams, buildQueryString } from 'app/state/router/utilities';
 
 interface OwnProps {
-  children: Component,
-  className: string,
-  disabled: boolean,
-  location: Location,
-  newTab: boolean,
-  params: [] | object,
-  preserveQuery: boolean,
-  query: object,
-  route: string,
+  children: Component;
+  className: string;
+  disabled: boolean;
+  location: Location;
+  newTab: boolean;
+  params: [] | object;
+  preserveQuery: boolean;
+  query: object;
+  route: string;
 }
 
 interface StateProps {
-  pathname: string,
+  pathname: string;
 }
 
-type Props = OwnProps & StateProps
+type Props = OwnProps & StateProps;
 
 const NavLinkProps: Array<any> = [
   'activeClassName',
@@ -70,7 +70,7 @@ const LinkContainer = ({
   </NavLink>
 );
 
-const mapStateToProps = (state: any, { route }: OwnProps): StateProps => ({
+const mapStateToProps = (state: object, { route }: OwnProps): StateProps => ({
   pathname: getRoute(state, route),
 });
 

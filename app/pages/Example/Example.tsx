@@ -2,12 +2,10 @@
  * @module app/pages/Example
  */
 
-import PropTypes from 'prop-types';
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators, AnyAction, Dispatch } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { Helmet } from 'react-helmet-async';
-import { Route, RouteProps } from 'react-router';
 
 import './Example.pcss';
 import Button from 'app/components/elements/Button';
@@ -15,11 +13,12 @@ import Link from 'app/containers/Link';
 import RouteWithSubRoutes from 'app/components/utilities/RouteWithSubRoutes';
 import { fetchExample } from 'app/state/example/actions';
 import { getExampleItems } from 'app/state/example/selectors';
+import { RouteInterface } from 'app/routes';
 
 type Props = {
   exampleItems: Array<number>;
   fetchExample: Function;
-  routes: Array<RouteProps>;
+  routes: Array<RouteInterface>;
 }
 
 const ExamplePage = ({ exampleItems, fetchExample, routes }: Props) => (

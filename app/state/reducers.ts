@@ -6,9 +6,13 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 
-import { reducer as app } from './app';
+import { default as app, AppState } from './app/reducer';
 import { reducer as example } from './example';
 import { reducer as routes } from './routes';
+
+export interface State {
+  app: AppState;
+}
 
 /**
  * Create reducer for store
