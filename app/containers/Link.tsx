@@ -4,24 +4,46 @@
 
 import cx from 'classnames';
 import React, { Component } from 'react';
-import { compose, keys, pick, prop } from 'ramda';
+import { pick } from 'ramda';
 import { connect } from 'react-redux';
+import { Location } from 'history';
 import { NavLink, withRouter } from 'react-router-dom';
 
-import { getRoutes } from 'app/state/routes/selectors';
+import { getRoute } from 'app/state/routes/selectors';
 import { buildWithParams, buildQueryString } from 'app/state/router/utilities';
 
-type Props = {
+interface OwnProps {
   children: Component,
   className: string,
   disabled: boolean,
-  location: object,
+  location: Location,
   newTab: boolean,
-  pathname: string,
   params: [] | object,
   preserveQuery: boolean,
   query: object,
+  route: string,
 }
+
+interface StateProps {
+  pathname: string,
+}
+
+type Props = OwnProps & StateProps
+
+const NavLinkProps: Array<string> = [
+  'activeClassName',
+  'activeStyle',
+  'aria-current',
+  'exact',
+  'innerRef',
+  'isActive',
+  'location',
+  'onClick',
+  'replace',
+  'strict',
+  'style',
+  'to',
+];
 
 const Link = ({
   children,
@@ -36,9 +58,9 @@ const Link = ({
   ...props
 }: Props) => (
   <NavLink
-    {...pick(keys(NavLink.propTypes), props)}
+    {...pick(NavLinkProps, props)}
     className={cx('nav-link', className, { disabled })}
-    target={newTab ? '_blank' : null}
+    target={newTab ? '_blank' : undefined}
     to={{
       pathname: buildWithParams(pathname, params),
       search: preserveQuery ? location.search : buildQueryString(query),
@@ -48,8 +70,9 @@ const Link = ({
   </NavLink>
 );
 
-const mapStateToProps = (state, { route }) => ({
-  pathname: compose(prop(route), getRoutes)(state),
+const mapStateToProps = (state: any, { route }: OwnProps): StateProps => ({
+  pathname: getRoute(state, route),
 });
 
-export default compose(withRouter, connect(mapStateToProps))(Link);
+const ConnectComponent: React.ReactType = connect(mapStateToProps)(Link);
+export default withRouter(ConnectComponent);
