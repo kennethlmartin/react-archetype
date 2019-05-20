@@ -9,7 +9,7 @@ type Props = {
   from: string;
   to: string | object;
   statusCode: number;
-}
+};
 
 const RedirectWithStatus = ({ from, to, statusCode }: Props) => (
   <Route

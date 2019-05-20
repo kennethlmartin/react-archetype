@@ -19,7 +19,7 @@ type Props = {
   exampleItems: Array<number>;
   fetchExample: Function;
   routes: Array<RouteInterface>;
-}
+};
 
 const ExamplePage = ({ exampleItems, fetchExample, routes }: Props) => (
   <Fragment>

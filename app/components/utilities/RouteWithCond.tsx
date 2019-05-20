@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 type Props = {
   children: ReactElement;
   cond: boolean | undefined;
-}
+};
 
 const RenderWithCond = ({ children, cond, ...props }: Props) => (
   <Route

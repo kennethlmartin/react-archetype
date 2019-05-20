@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 type Props = {
   children: ReactElement;
   statusCode: number;
-}
+};
 
 const RouteWithStatus = ({ children, statusCode }: Props) => (
   <Route

@@ -5,7 +5,7 @@
 type Props = {
   cond: boolean;
   children(): void;
-}
+};
 
 const RenderIf = ({ children, cond }: Props) => (
   cond ? children() : null

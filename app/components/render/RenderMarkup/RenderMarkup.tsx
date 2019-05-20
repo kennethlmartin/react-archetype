@@ -7,7 +7,7 @@ import React from 'react';
 type Props = {
   html: string;
   tag: string;
-}
+};
 
 const RenderMarkup = ({ html, tag, ...props }: Props) => (
   React.createElement(tag, {

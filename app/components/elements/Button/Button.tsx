@@ -11,7 +11,7 @@ type Props = {
   children: string;
   disabled?: boolean;
   onClick(e: MouseEvent<HTMLElement>): void;
-}
+};
 
 const Button = ({ children, disabled, onClick }: Props) => (
   <button

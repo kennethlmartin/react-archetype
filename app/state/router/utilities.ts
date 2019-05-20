@@ -75,7 +75,13 @@ export const parseQueryString = R.compose(Qs.parse, R.replace('?', ''));
  * @param {string} obj.query - used to `buildQueryString`
  * @returns {*} - react-router push event
  */
-export const navigateTo = ({ pathname, params, query }) => push({
+export const navigateTo = ({ pathname, params, query }: NavigateToInterface) => push({
   pathname: pathname + buildPathParams(params),
   search: buildQueryString(query),
 });
+
+interface NavigateToInterface {
+  pathname: string;
+  params: string;
+  query: object;
+}

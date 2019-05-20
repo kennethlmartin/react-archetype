@@ -17,7 +17,7 @@ import ScrollToTop from 'app/components/utilities/ScrollToTop';
 
 type Props = {
   metaTitle?: string;
-}
+};
 
 const AppRoot = ({ metaTitle }: Props) => (
   <Fragment>
